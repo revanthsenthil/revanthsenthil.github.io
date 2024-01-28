@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Research</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="resume.html">Resume/CV</a></li>
+            </ul>
+    
+            </nav>
+    </header>
+
+    <main>
+        <!-- <div class="keyword-container">
+            <span class="keyword">Robotics</span>
+            <span class="keyword">Perception</span>
+            <span class="keyword">Locomotion</span>
+            <span class="keyword">UAV/UAS</span>
+        </div> -->
+        <div class="filters-container">
+            <h4>Filter Keywords</h4>
+        <button class="filter-button" data-keyword="pathPlanning">Path Planning</button>
+        <button class="filter-button" data-keyword="dataset">Dataset</button>
+        <button class="filter-button" data-keyword="uav">UAV/UAS</button>
+        <button class="filter-button" data-keyword="mrs">Multi-robot</button>
+        <button class="filter-button" data-keyword="biosensors">Biosensors</button>
+        <button class="filter-button" data-keyword="agriculture">Agriculture</button>
+        <button class="filter-button" data-keyword="inspection">Inspection</button>
+        <button class="filter-button" data-keyword="cogWL">Cognitive Workload</button>
+        <button class="filter-button" data-keyword="hri">Human-Robot Interaction</button>
+        <button class="filter-button" data-keyword="perception">Perception</button>
+        <button class="filter-button" data-keyword="locomotion">Locomotion</button>
+        <button class="filter-button" data-keyword="userstud">User Study</button>
+        </div>
+        
+
+        <section class="papers-section">
+            <h2>Papers</h2>
+
+        <div class="paper-container">
+            <div class="paper" data-keywords="pathPlanning uav inspection">
+                <h3>UPPLIED: UAV Path Planning for Learning from Demonstration</h3>
+                <div class="paper-keywords">
+                    <span class="keyword_p">Path Planning</span>
+                    <span class="keyword_p">UAV/UAS</span>
+                    <span class="keyword_p">Inspection</span>
+                    <!-- More keywords as needed -->
+                </div>
+                <h5><strong>Published</strong> in IEEE-IROS 2023</h5>
+                <p>In this paper, we present UPPLIED: a novel path-planning framework for UAV-based visual inspection of large structures. Leveraging demonstrated trajectories, UPPLIED generates new, optimized paths for inspecting similar structures, maintaining geometric consistency and targeted region focus. The effectiveness of our approach is demonstrated through various experiments, showcasing its capability to adapt inspection trajectories across different structures with minimal deviation.</p>
+                <a href="https://arxiv.org/abs/2303.04284">Read Paper</a>
+                <a href="https://www.youtube.com/watch?v=YqPx-cLkv04&feature=youtu.be">Watch Video</a>
+            </div>
+            <!-- Example paper - repeat structure for each paper -->
+            <div class="paper" data-keywords="dataset mrs biosensors cogWL">
+                <h3>MOCAS: A Multimodal Dataset for Objective Cognitive Workload Assessment on Simultaneous Tasks</h3>
+                <div class="paper-keywords">
+                    <span class="keyword_p">Dataset</span>
+                    <span class="keyword_p">Multi-robot</span>
+                    <span class="keyword_p">Biosensors</span>
+                    <span class="keyword_p">Cognitive Workload</span>
+                    <!-- More keywords as needed -->
+                </div>
+                <p>MOCAS introduces a realistic, multimodal dataset for assessing human cognitive workload (CWL), derived from actual CCTV monitoring tasks, unlike traditional virtual game-based datasets. The study integrates physiological and behavioral data from wearable sensors and a webcam, collected from 21 participants, supplemented by CWL self-assessments and personal background surveys. Its technical validation confirms the dataset's effectiveness in eliciting varied CWL levels, making it a valuable tool for real-world CWL recognition.</p>
+                <a href="https://arxiv.org/abs/2210.03065">Read Paper</a>
+                <!-- Optional video link -->
+                <!-- <a href="link-to-video">Watch Video</a> -->
+            </div>
+        </div>
+        </section>
+        <hr>
+        <section class="presentations-section">
+            <h2>Presentations</h2>
+            <div class="presentation-container">
+
+            <div class="paper" data-keywords="biosensors uav agriculture">
+                <h3>VF-PLUME: Vertical Farming Plant Localizing UAV with Mass Estimation</h3>
+                <div class="paper-keywords">
+                    <span class="keyword_p">Biosensors</span>
+                    <span class="keyword_p">UAV/UAS</span>
+                    <span class="keyword_p">Agriculture</span>
+                    <!-- More keywords as needed -->
+                </div>
+                <p>VF-PLUME addresses the challenge of monitoring in compact, high-yield vertical farms by introducing a singular unmanned aerial vehicle (UAV) equipped to assess plant growth and environmental conditions. Utilizing advanced localization algorithms and environmental sensors, the UAV creates detailed 3D maps capturing crucial data like temperature, humidity, and air quality. This innovative approach streamlines farm monitoring, enabling efficient, data-driven agriculture suitable for supporting growing urban populations.</p>
+                <a href="docs/VF-PLUME.pdf" target="_blank">Presentation PDF</a>
+
+                <!-- Optional video link -->
+                <!-- <a href="link-to-video">Watch Video</a> -->
+            </div>
+
+            <div class="paper" data-keywords="biosensors cogWL mrs hri userstud">
+                <h3>A Dynamic Cognitive Workload Allocation Method for Human Robot Interaction</h3>
+                <div class="paper-keywords">
+                    <span class="keyword_p">Biosensors</span>
+                    <span class="keyword_p">Multi-robot</span>
+                    <span class="keyword_p">Human-Robot Interaction</span>
+                    <span class="keyword_p">Cognitive Workload</span>
+                    <span class="keyword_p">User Study</span>
+                    <!-- More keywords as needed -->
+                </div>
+                <p>This explores dynamic allocation and measurement of visual perceptual and cognitive workload in HRI using a novel workload allocation algorithm and an affective prediction algorithm, supplemented by a user study. The study leverages the 'Husformer,' a multi-modal framework with cross-modal transformers, to analyze data from biosensors and behavioral sensors, enhancing our understanding of human states during interaction tasks. The effectiveness of this approach is validated through user experiments, building upon prior studies correlating cognitive workload with changes in GUI complexity and object motion, thereby optimizing task allocation based on individual cognitive load.</p>
+                <a href="docs/f22_expo.pdf">Watch Poster</a>
+
+                <!-- Optional video link -->
+                <!-- <a href="link-to-video">Watch Video</a> -->
+            </div>
+
+            
+            <div class="paper" data-keywords="biosensors cogWL mrs hri userstud">
+                <h3>A GUI for Measuring Cognitive Workload Stimulus in Human Robot Interaction</h3>
+                <div class="paper-keywords">
+                    <span class="keyword_p">Biosensors</span>
+                    <span class="keyword_p">Multi-robot</span>
+                    <span class="keyword_p">Human-Robot Interaction</span>
+                    <span class="keyword_p">Cognitive Workload</span>
+                    <span class="keyword_p">User Study</span>
+                    <!-- More keywords as needed -->
+                </div>
+                <p>This research introduces a new GUI-based method to assess cognitive stimulus in Human-Robot Interaction, aimed at understanding user workload and state, replacing outdated tools like Dual N-Back. The study involved 30 participants interacting with SMARTmBOTs and using wearable biosensors, with data integrated into a multi-modal perception model to analyze cognitive loads. Developed using PyQt for ROS2 compatibility, the GUI, designed for this specific experiment, is being made open source for broader application in Human-Robot Interaction research.</p>
+                <a href="https://www.youtube.com/watch?v=dA7AgpW2gYk">Watch Talk</a>
+
+                <!-- Optional video link -->
+                <!-- <a href="link-to-video">Watch Video</a> -->
+            </div>
+
+            <!-- Repeat for each paper -->
+        </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Same footer as in index.html -->
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

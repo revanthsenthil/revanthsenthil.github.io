@@ -1,0 +1,250 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d7ccc8; /* Mild brown background */
+    color: #000000; /* Black text */
+}
+
+header, footer {
+    background-color: #333333; /* Darker shade for contrast */
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    margin: 20px;
+    background-color: #ffffff; /* White background for main content area */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding subtle shadow */
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-description {
+    color: #808080; /* Grey for text */
+    margin-bottom: 20px;
+}
+
+/* Existing styles */
+
+/* Typing animation cursor */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: currentColor;
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+}
+
+/* Existing styles */
+
+.typing-text {
+    min-height: 1em; /* Ensures the container maintains a minimum height */
+    display: inline-block; /* Allows the use of min-height */
+    vertical-align: top; /* Keeps the text aligned at the top */
+}
+
+.social-icons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #333; /* Icon color */
+    font-size: 24px; /* Icon size */
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #007bff; /* Icon hover color */
+}
+
+.keyword-container {
+    text-align: center;
+    margin: 20px 0;
+    /* need to center keywords */
+    justify-content: center;
+}
+
+.paper-keywords {
+    text-align: center; /* Center the keywords */
+    margin-bottom: 15px; /* Space below the keyword container */
+}
+
+
+.keyword {
+    display: inline-block;
+    background-color: #f2f2f2; /* Light grey background */
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px;
+    font-size: 0.85em; /* Adjust the font size as needed */
+    margin: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.keyword_p {
+    display: inline-block;
+    background-color: #f2f2f2; /* Light grey background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 5px 15px;
+    margin: 2px;
+    font-weight: bold;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.paper-container, .presentation-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.paper {
+    background-color: #fff; /* White background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Adjust width as needed */
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.paper h3 {
+    margin-top: 0;
+}
+
+.paper a {
+    display: block;
+    margin-top: 10px;
+    color: #007bff; /* Link color */
+    text-decoration: none; /* No underline */
+}
+
+.paper a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.paper-video {
+    width: 100%; /* Responsive width */
+    height: 250px; /* Fixed height, adjust as needed */
+    margin-top: 15px;
+    border-radius: 10px; /* Optional: for rounded corners */
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc; /* Color of the dividing line */
+    margin: 20px 0; /* Space around the line */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px; /* Space below headings */
+}
+
+.papers-section, .presentations-section {
+    padding: 20px;
+}
+
+.papers-section {
+    background-color: #fffde7; /* Mild light yellow */
+}
+
+.presentations-section {
+    background-color: #e0f7fa; /* Mild light blue */
+}
+
+/* Style for the filter buttons */
+.filter-button {
+    display: inline-block;
+    background-color: #f2f2f2; /* Light grey background */
+    border: none; /* Remove border */
+    border-radius: 20px; /* Rounded corners */
+    padding: 5px 15px;
+    margin: 5px;
+    font-size: 0.85em;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Style for active state */
+.filter-button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Center the filter buttons container */
+.filters-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.resume-container {
+    text-align: center; /* Centering content */
+    padding: 20px;
+}
+
+.resume-iframe {
+    width: 80%; /* Adjust width as per your preference */
+    height: 800px; /* Adjust height as per your preference */
+    border: none; /* Remove iframe border */
+    margin-bottom: 20px;
+}
+
+.download-button {
+    display: inline-block;
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline from link */
+    font-weight: bold;
+}
+
+.download-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let phraseIndex = 0;
     let letterIndex = 0;
     let isDeleting = false;
-    let typingSpeed = 150;
+    let typingSpeed = 50;
 
     const filterButtons = document.querySelectorAll('.filter-button');
     const papers = document.querySelectorAll('.paper');
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Remove a letter
             currentPhrase.pop();
             letterIndex--;
-            typingSpeed = 50;
+            typingSpeed = 30;
         } else {
             // Add a letter
             currentPhrase.push(phrases[phraseIndex][letterIndex]);
@@ -67,8 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start the typing effect
     type();
 
+});
 
 
-
-    
+document.querySelectorAll('.blog-post').forEach(post => {
+    post.addEventListener('click', function() {
+        window.location.href = this.getAttribute('data-href');
+    });
 });

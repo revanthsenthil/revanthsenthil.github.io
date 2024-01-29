@@ -18,7 +18,7 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
@@ -50,7 +50,7 @@ main {
 }
 
 .profile-description {
-    color: #808080; /* Grey for text */
+    color: #333333; /* Grey for text */
     margin-bottom: 20px;
 }
 
@@ -93,7 +93,7 @@ main {
 }
 
 .social-icons a:hover {
-    color: #007bff; /* Icon hover color */
+    color: #4A7B9D; /* Icon hover color */
 }
 
 .keyword-container {
@@ -158,7 +158,7 @@ main {
 .paper a {
     display: block;
     margin-top: 10px;
-    color: #007bff; /* Link color */
+    color: #4A7B9D; /* Link color */
     text-decoration: none; /* No underline */
 }
 
@@ -190,11 +190,11 @@ h2 {
 }
 
 .papers-section {
-    background-color: #fffde7; /* Mild light yellow */
+    background-color: #FFFFFF; /* Mild light yellow */
 }
 
 .presentations-section {
-    background-color: #e0f7fa; /* Mild light blue */
+    background-color: #FFFFFF; /* Mild light blue */
 }
 
 /* Style for the filter buttons */
@@ -213,7 +213,7 @@ h2 {
 
 /* Style for active state */
 .filter-button.active {
-    background-color: #007bff;
+    background-color: #4A7B9D;
     color: white;
 }
 
@@ -237,7 +237,7 @@ h2 {
 
 .download-button {
     display: inline-block;
-    background-color: #007bff; /* Button color */
+    background-color: #4A7B9D; /* Button color */
     color: white; /* Text color */
     padding: 10px 20px;
     border-radius: 5px;
@@ -246,5 +246,55 @@ h2 {
 }
 
 .download-button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #4A7B9D; /* Darker shade on hover */
+}
+
+.post-navigation a {
+    background-color: #4A7B9D;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.post-navigation a:hover {
+    background-color: #4A7B9D;
+}
+
+.post-navigation {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.blog-post {
+    background-color: #fff; /* White background */
+    border: 1px solid #ddd; /* Light border */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Adjust as needed */
+    cursor: pointer; /* Indicates it's clickable */
+}
+
+.blog-post h3 {
+    margin-top: 0;
+}
+
+.post-date {
+    color: #666; /* Grey color for the date */
+    font-size: 0.9em;
+}
+
+/* Hover effect for blog post */
+.blog-post:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

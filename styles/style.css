@@ -298,3 +298,10 @@ h2 {
 .blog-post:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.blog-post-image {
+    width: 100%; /* Makes the image responsive */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 5px; /* Optional: for rounded corners */
+    margin-bottom: 10px; /* Space between the image and the title */
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Research</title>
+    <title>Research - Revanth Senthilkumaran</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -39,7 +39,9 @@
         <button class="filter-button" data-keyword="cogWL">Cognitive Workload</button>
         <button class="filter-button" data-keyword="hri">Human-Robot Interaction</button>
         <button class="filter-button" data-keyword="perception">Perception</button>
-        <button class="filter-button" data-keyword="locomotion">Locomotion</button>
+        <!-- <button class="filter-button" data-keyword="locomotion">Locomotion</button> -->
+        <button class="filter-button" data-keyword="gui">GUI</button>
+        <button class="filter-button" data-keyword="rl">RL/LfD</button>
         <button class="filter-button" data-keyword="userstud">User Study</button>
         </div>
         
@@ -48,12 +50,13 @@
             <h2>Papers</h2>
 
         <div class="paper-container">
-            <div class="paper" data-keywords="pathPlanning uav inspection">
+            <div class="paper" data-keywords="pathPlanning uav inspection rl">
                 <h3>UPPLIED: UAV Path Planning for Learning from Demonstration</h3>
                 <div class="paper-keywords">
                     <span class="keyword_p">Path Planning</span>
                     <span class="keyword_p">UAV/UAS</span>
                     <span class="keyword_p">Inspection</span>
+                    <span class="keyword_p">RL/LfD</span>
                     <!-- More keywords as needed -->
                 </div>
                 <h5><strong>Published</strong> in IEEE-IROS 2023</h5>
@@ -77,6 +80,18 @@
                 <!-- Optional video link -->
                 <!-- <a href="link-to-video">Watch Video</a> -->
             </div>
+            <div class="paper" data-keywords="mrs gui hri">
+                <h3>SMARTmBOT: A ROS2-based low-cost and open-source mobile robot platform</h3>
+                <div class="paper-keywords">
+                    <span class="keyword_p">Multi-robot</span>
+                    <span class="keyword_p">GUI</span>
+                    <span class="keyword_p">Human-robot Interaction</span>
+                    <!-- More keywords as needed -->
+                </div>
+                <h5><strong>Published</strong> in IEEE-IROS 2023</h5>
+                <p>The paper presents SMARTmBOT, an affordable, open-source mobile robot platform designed for extensive robotics research and education, built on ROS2 and featuring a low-cost, modular, customizable, and expandable design. With most components 3D-printable and a total cost of about $210, SMARTmBOT is accessible and easy to repair, equipped with a comprehensive sensor suite suitable for various tasks like navigation and obstacle avoidance. Its capabilities are demonstrated through diverse experiments, and all source code for sensor integration, camera streaming, and robot control is available <a href="https://github.com/SMARTlab-Purdue/SMARTmBOT.">here</a> </p>
+                <a href="https://arxiv.org/abs/2203.08903">Read Paper</a>
+            </div>
         </div>
         </section>
         <hr>
@@ -84,16 +99,16 @@
             <h2>Presentations</h2>
             <div class="presentation-container">
 
-            <div class="paper" data-keywords="biosensors uav agriculture">
+            <div class="paper" data-keywords="biosensors uav agriculture rl dataset">
                 <h3>Data Collection for Mobile Manipulators for Learning from Demonstration</h3>
                 <div class="paper-keywords">
                     <span class="keyword_p">Perception</span>
-                    <span class="keyword_p"></span>
-                    <span class="keyword_p"></span>
+                    <span class="keyword_p">RL/LfD</span>
+                    <span class="keyword_p">Dataset</span>
                     <!-- More keywords as needed -->
                 </div>
-                <h5><strong>Presented</strong> at Purdue Spring URC 2023</h5>
-                <p>VF-PLUME addresses the challenge of monitoring in compact, high-yield vertical farms by introducing a singular unmanned aerial vehicle (UAV) equipped to assess plant growth and environmental conditions. Utilizing advanced localization algorithms and environmental sensors, the UAV creates detailed 3D maps capturing crucial data like temperature, humidity, and air quality. This innovative approach streamlines farm monitoring, enabling efficient, data-driven agriculture suitable for supporting growing urban populations.</p>
+                <h5><strong>Presented</strong> at University of Minnesota Summer URC 2023</h5>
+                <p>This research focuses on leveraging Spot's advanced hardware and basic behaviors to develop a robust data collection method for facilitating robot learning through task demonstrations, such as 'putting a chair next to a table.' Utilizing demonstrations, a voxel map is created, encompassing robot state and goal information, fed into a modified Vision-Language Model, Per-Act, which generates 3D colored voxels for training. The dataset, comprising around 25 varied demonstrations with Spot, includes comprehensive data recordings used to train the model, emphasizing the practical application of robotic manipulation and navigation.</p>
                 <a href="docs/umn_poster_spot.pdf" target="_blank">View Poster</a>
 
                 <!-- Optional video link -->

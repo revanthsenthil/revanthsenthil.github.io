@@ -24,6 +24,31 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* .resume-nav nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.resume-nav nav ul li a {
+    font-size: 1.8em;
+} */
+
+.nav-item {
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s, border-radius 0.3s;
+    /* font-size: extras; */
+    font-size: 1.2em;
+}
+
+.nav-item:hover {
+    background-color: #4A7B9D;
+    color: #fff;
+    border-radius: 10px;
+    /* padding: 5px 10px; */
 }
 
 main {
@@ -235,6 +260,10 @@ h2 {
     margin-bottom: 20px;
 }
 
+.download-button-wrapper {
+    text-align: center;
+}
+
 .download-button {
     display: inline-block;
     background-color: #4A7B9D; /* Button color */
@@ -248,6 +277,7 @@ h2 {
 .download-button:hover {
     background-color: #4A7B9D; /* Darker shade on hover */
 }
+
 
 .post-navigation a {
     background-color: #4A7B9D;
@@ -275,7 +305,25 @@ h2 {
     padding: 20px;
 }
 
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
 .blog-post {
+    background-color: #fff; /* White background */
+    border: 1px solid #ddd; /* Light border */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Adjust as needed */
+    cursor: pointer; /* Indicates it's clickable */
+}
+
+.project {
     background-color: #fff; /* White background */
     border: 1px solid #ddd; /* Light border */
     padding: 20px;
@@ -289,6 +337,10 @@ h2 {
     margin-top: 0;
 }
 
+.project h3 {
+    margin-top: 0;
+}
+
 .post-date {
     color: #666; /* Grey color for the date */
     font-size: 0.9em;
@@ -299,7 +351,18 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.project:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .blog-post-image {
+    width: 100%; /* Makes the image responsive */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 5px; /* Optional: for rounded corners */
+    margin-bottom: 10px; /* Space between the image and the title */
+}
+
+.project-image {
     width: 100%; /* Makes the image responsive */
     height: auto; /* Maintains the aspect ratio */
     border-radius: 5px; /* Optional: for rounded corners */

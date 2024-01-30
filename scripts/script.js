@@ -75,3 +75,10 @@ document.querySelectorAll('.blog-post').forEach(post => {
         window.location.href = this.getAttribute('data-href');
     });
 });
+
+
+document.querySelectorAll('.project').forEach(post => {
+    post.addEventListener('click', function() {
+        window.location.href = this.getAttribute('data-href');
+    });
+});

@@ -331,6 +331,9 @@ h2 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 300px; /* Adjust as needed */
     cursor: pointer; /* Indicates it's clickable */
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .blog-post h3 {

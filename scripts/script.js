@@ -78,7 +78,8 @@ document.querySelectorAll('.blog-post').forEach(post => {
 
 
 document.querySelectorAll('.project').forEach(post => {
-    post.addEventListener('click', function() {
+    post.addEventListener('click', function(event) {
+        event.stopPropagation();
         window.location.href = this.getAttribute('data-href');
     });
 });

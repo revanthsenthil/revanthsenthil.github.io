@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const phrases = ["robotics researcher", "basketball and formula 1"];
+    const phrases = ["robotics researcher", "basketball and formula 1 fan"];
     const typingText = document.querySelector('.typing-text');
     let currentPhrase = [];
     let phraseIndex = 0;

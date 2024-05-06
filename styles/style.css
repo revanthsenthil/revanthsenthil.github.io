@@ -1,6 +1,6 @@
 body {
     font-family: 'Inter';
-    background-color: #d7ccc8; /* Mild brown background */
+    background-color: #333333; /* Mild brown background */
     color: #000000; /* Black text */
 }
 
@@ -18,7 +18,7 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
+    /* margin: 0 15px; */
 }
 
 nav ul li a {
@@ -63,13 +63,13 @@ main {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
 }
 
 .profile-photo {
-    width: 99px;
-    height: 150px;
+    width: auto;
+    height: 250px;
     border-radius: 8%;
     /* margin-right: 20px; */
 }
@@ -77,7 +77,62 @@ main {
 .profile-description {
     color: #333333; /* Grey for text */
     margin-bottom: 20px;
+    flex: 65%;
+    padding-right: 20px;
+    font-size: 1.25em;
 }
+
+.profile-photo-container {
+    flex: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.updates-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.update {
+    flex: 80%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.update-image-container {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.update-image {
+    width: auto;
+    height: 100px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.update-text {
+    flex: 1;
+}
+
+.update-text h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #333333; /* Grey for text */
+}
+
+.update-text p {
+    margin-top: 0px;
+    color: #666666;
+    margin-bottom: 0px;
+}
+
 
 /* Existing styles */
 

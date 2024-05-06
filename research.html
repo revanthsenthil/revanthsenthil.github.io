@@ -6,16 +6,17 @@
     <title>revanth's research</title>
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html" class="nav-item">home</a></li>
-                <li><a href="research.html" class="nav-item">research</a></li>
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="research.html" class="nav-item">Research</a></li>
                 <!-- <li><a href="projects.html" class="nav-item">projects</a></li>
                 <li><a href="blog.html" class="nav-item">blog</a></li> -->
-                <li><a href="resume.html" class="nav-item">resume/cv</a></li>
+                <li><a href="resume.html" class="nav-item">Resume</a></li>
             </ul>
     
             </nav>
@@ -29,7 +30,7 @@
             <span class="keyword">UAV/UAS</span>
         </div> -->
         <div class="filters-container">
-            <h4>filter keywords</h4>
+            <h4>Filter Keywords</h4>
         <button class="filter-button" data-keyword="pathPlanning">Path Planning</button>
         <button class="filter-button" data-keyword="dataset">Dataset</button>
         <button class="filter-button" data-keyword="uav">UAV/UAS</button>
@@ -46,12 +47,13 @@
         <button class="filter-button" data-keyword="userstud">User Study</button>
         </div>
         
-
+        <hr>
         <section class="papers-section">
-            <h2>papers</h2>
+            <h2>Papers</h2>
 
-        <div class="paper-container">
+        <!-- <div class="paper-container"> -->
             <div class="paper" data-keywords="Dataset hri gui">
+                <!-- <img src="assets/artemis.jpg" alt="ARTEMIS" class="paper-image"> -->
                 <h3>ARTEMIS: AI-Driven Robotic Triage labeling and Emergency Information System</h3>
                 <div class="paper-keywords">
                     <span class="keyword_p">Dataset</span>
@@ -64,6 +66,7 @@
                 <p>Mass casualty incidents (MCIs) present major challenges for emergency medical services, overwhelming resources and requiring efficient victim assessment. We introduce ARTEMIS, an AI-driven robotic system using speech and natural language processing, and deep learning for acuity classification, deployed on a mobile quadruped for victim localization and severity assessment. Our simulations and outdoor tests demonstrate that ARTEMIS can achieve triage classification precision exceeding 74% overall and 99% for the most critical cases, significantly outperforming existing deep learning-based systems.</p>
                 <a href="https://arxiv.org/abs/2309.08865" target="_blank">Read Paper</a>
                 <a href="https://www.youtube.com/watch?v=4FU4FRxNwmY" target="_blank">Watch Video</a>
+                <hr>
             </div>
             <div class="paper" data-keywords="pathPlanning uav inspection rl">
                 <h3>UPPLIED: UAV Path Planning for Learning from Demonstration</h3>
@@ -80,6 +83,7 @@
                 <p>In this paper, we present UPPLIED: a novel path-planning framework for UAV-based visual inspection of large structures. Leveraging demonstrated trajectories, UPPLIED generates new, optimized paths for inspecting similar structures, maintaining geometric consistency and targeted region focus. The effectiveness of our approach is demonstrated through various experiments, showcasing its capability to adapt inspection trajectories across different structures with minimal deviation.</p>
                 <a href="https://arxiv.org/abs/2303.04284" target="_blank">Read Paper</a>
                 <a href="https://www.youtube.com/watch?v=YqPx-cLkv04&feature=youtu.be" target="_blank">Watch Video</a>
+                <hr>
             </div>
             <!-- Example paper - repeat structure for each paper -->
             <div class="paper" data-keywords="dataset mrs biosensors cogWL">
@@ -98,6 +102,7 @@
                 <a href="https://arxiv.org/abs/2210.03065" target="_blank">Read Paper</a>
                 <!-- Optional video link -->
                 <!-- <a href="link-to-video">Watch Video</a> -->
+                <hr>
             </div>
             <div class="paper" data-keywords="mrs gui hri">
                 <h3>SMARTmBOT: A ROS2-based low-cost and open-source mobile robot platform</h3>
@@ -113,14 +118,14 @@
                 <a href="https://github.com/SMARTlab-Purdue/SMARTmBOT">GitHub Repository</a>
                 <a href="https://arxiv.org/abs/2203.08903">Read Paper</a>
             </div>
-        </div>
+        <!-- </div> -->
         </section>
         <hr>
         <section class="presentations-section">
-            <h2>presentations</h2>
-            <div class="presentation-container">
+            <h2>Presentations</h2>
+            <!-- <div class="presentation-container"> -->
 
-            <div class="paper" data-keywords="biosensors uav agriculture rl dataset">
+            <div class="paper" data-keywords="perception rl dataset">
                 <h3>Data Collection for Mobile Manipulators for Learning from Demonstration</h3>
                 <div class="paper-keywords">
                     <span class="keyword_p">Perception</span>
@@ -134,6 +139,7 @@
 
                 <!-- Optional video link -->
                 <!-- <a href="link-to-video">Watch Video</a> -->
+                <hr>
             </div>
 
             <div class="paper" data-keywords="biosensors uav agriculture">
@@ -150,6 +156,7 @@
 
                 <!-- Optional video link -->
                 <!-- <a href="link-to-video">Watch Video</a> -->
+                <hr>
             </div>
 
             <div class="paper" data-keywords="biosensors cogWL mrs hri userstud">
@@ -168,6 +175,7 @@
 
                 <!-- Optional video link -->
                 <!-- <a href="link-to-video">Watch Video</a> -->
+                <hr>
             </div>
 
             
@@ -187,15 +195,33 @@
 
                 <!-- Optional video link -->
                 <!-- <a href="link-to-video">Watch Video</a> -->
+                <hr>
             </div>
 
             <!-- Repeat for each paper -->
-        </div>
+        <!-- </div> -->
         </section>
     </main>
 
     <footer>
         <!-- Same footer as in index.html -->
+        <div class="footer-social-icons">
+            <a href="https://www.linkedin.com/in/revanth-senthilkumaran" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/revanthsenthil" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=p4oXJvQAAAAJ&hl=en" target="_blank" title="Google Scholar">
+                <i class="fas fa-graduation-cap"></i> <!-- Assuming this icon for Google Scholar -->
+            </a>
+            <a href="https://twitter.com/revvozz" target="_blank" title="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mailto:senthilr@purdue.edu" target="_blank" title="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
     </footer>
 
     <script src="scripts/script.js"></script>

@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Update the text on the website
-        typingText.textContent = currentPhrase.join('');
+        typingText.textContent = currentPhrase.join('') + '|';
 
         if (!isDeleting && letterIndex === phrases[phraseIndex].length) {
             // Pause at the end of a phrase

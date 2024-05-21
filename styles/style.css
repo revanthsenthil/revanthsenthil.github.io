@@ -1,24 +1,31 @@
 body {
     font-family: 'Inter';
-    background-color: #333333; /* Mild brown background */
-    color: #000000; /* Black text */
+    background-color: #333333;
+    color: #000000;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header, footer {
-    background-color: #333333; /* Darker shade for contrast */
+    background-color: #333333;
     color: white;
     text-align: center;
+    width: 100%;
     padding: 1em 0;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 0; /* Remove default margin */
+    text-align: center;
 }
 
 nav ul li {
     display: inline;
-    /* margin: 0 15px; */
 }
 
 nav ul li a {
@@ -27,20 +34,10 @@ nav ul li a {
     font-size: 1.2em;
 }
 
-/* .resume-nav nav ul li {
-    display: inline;
-    margin: 0 20px;
-}
-
-.resume-nav nav ul li a {
-    font-size: 1.8em;
-} */
-
 .nav-item {
     padding: 5px 10px;
     border-radius: 10px;
     transition: background-color 0.3s, border-radius 0.3s;
-    /* font-size: extras; */
     font-size: 24px;
 }
 
@@ -48,98 +45,163 @@ nav ul li a {
     background-color: #4A7B9D;
     color: #fff;
     border-radius: 10px;
-    /* padding: 5px 10px; */
 }
 
 main {
-    margin: 20px;
-    background-color: #ffffff; /* White background for main content area */
+    width: 100%;
+    max-width: 1200px; /* Center content and limit maximum width */
+    margin: 20px auto; /* Center the main content */
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .profile-section {
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
-    flex-direction: row;
     text-align: center;
 }
 
 .profile-photo {
-    width: auto;
-    height: 250px;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
     border-radius: 8%;
-    /* margin-right: 20px; */
 }
 
 .profile-description {
-    color: #333333; /* Grey for text */
+    color: #333333;
     margin-bottom: 20px;
-    flex: 65%;
-    padding-right: 20px;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
     font-size: 1.25em;
 }
 
 .profile-photo-container {
-    flex: 35%;
+    width: 100%;
+    max-width: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .about-me {
-    padding-right: 120px;
-    padding-left: 120px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
+
 .about-me h3 {
     text-align: center;
 }
 
 .updates-section {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
 }
 
 .update {
-    flex: 80%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
-}
-
-.update-image-container {
-    flex: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
 }
 
 .update-image {
-    width: auto;
-    height: 100px;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
     border-radius: 10px;
-    margin-right: 20px;
+    margin-bottom: 10px;
 }
 
 .update-text {
-    flex: 1;
+    width: 100%;
+    max-width: 600px;
 }
 
 .update-text h4 {
     margin-top: 0;
     margin-bottom: 0;
-    color: #333333; /* Grey for text */
+    color: #333333;
 }
 
 .update-text p {
-    margin-top: 0px;
+    margin-top: 0;
     color: #666666;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
+
+.social-icons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+social-icons a:hover {
+    color: #4A7B9D;
+}
+
+.footer-social-icons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-social-icons a {
+    margin: 0 10px;
+    color: #ffffff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.footer-social-icons a:hover {
+    color: #4A7B9D;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    margin: 20px 0;
+}
+
+@media (min-width: 768px) {
+    .profile-section {
+        flex-direction: row;
+        justify-content: center; /* Center the content */
+        text-align: left;
+    }
+
+    .profile-description {
+        margin-bottom: 0;
+        padding-right: 20px;
+    }
+
+    .profile-photo-container {
+        margin-left: 20px;
+    }
+
+    .update {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .update-text {
+        margin-left: 20px;
+    }
+}
+
 
 
 .papers-section {

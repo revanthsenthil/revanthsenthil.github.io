@@ -1,48 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>revanth's blog</title>
-    <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8">
+  <title>Blog - Your Name</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <!-- In the <head> section -->
+  <script>
+    (function() {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="nav-item">home</a></li>
-                <li><a href="research.html" class="nav-item">research</a></li>
-                <!-- <li><a href="projects.html" class="nav-item">projects</a></li>
-                <li><a href="blog.html" class="nav-item">blog</a></li> -->
-                <li><a href="resume.html" class="nav-item">resume/cv</a></li>
-            </ul>
-    
-            </nav>
-    </header>
+  <!-- Header -->
+  <header>
+    <nav>
+      <span class="brand">revanth 🤖</span>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <!-- <li><a href="blog.html">Blog</a></li> -->
+        <li><a href="resume.html">Resume/CV</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle">🌙</button>
+  </header>
+  <!-- ... -->
 
-    <main class="blog-container">
-        <div class="blog-post" data-href="posts/iros23.html">
-            <img src="assets/iros_me.jpg" alt="Myself next to the IROS 2023 sign" class="blog-post-image">
-            <h3>Attended IEEE-IROS 2023!</h3>
-            <p class="post-date">Posted on: 07/10/2023</p>
-            <p>Attending IEEE-IROS 2023 was an incredible journey filled with amazing talks, innovative research from worldwide experts, and insights from top robotics and automation companies.</p>
-        </div>
-        <div class="blog-post" data-href="posts/rosTF.html">
-            <img src="assets/spot_stand.jpg" alt="Spot in position for Data Collection" class="blog-post-image">
-            <h3>ROS TFs: Reflecting on TFs on the Boston Dynamics Spot</h3>
-            <p class="post-date">Posted on: 10/08/2023</p>
-            <p>Over the Summer, with the opportunity to work on the Boston Dynamics Spot, I got to explore a lot of capabilities of Spot. The one that I worked on the most was using TFs appropriately for data collection.</p>
-        </div>
-        
-        <!-- Repeat for each blog post -->
+  <!-- Main Content -->
+  <main>
+    <section class="blog-list">
+      <h2>Blog</h2>
+      <div class="posts">
+        <!-- Repeat this block for each blog post -->
+        <article class="post">
+          <img src="images/blog1.jpg" alt="Blog Post 1">
+          <h3><a href="blog/post1.html">Blog Post Title 1</a></h3>
+          <p>One-line description of the blog post.</p>
+          <p class="date">Posted on: Date</p>
+        </article>
 
-    </main>
+        <!-- <article class="post">
+          <img src="images/blog1.jpg" alt="Blog Post 1">
+          <h3><a href="blog/post1.html">Blog Post Title 1</a></h3>
+          <p>One-line description of the blog post.</p>
+          <p class="date">Posted on: Date</p>
+        </article>
 
+        <article class="post">
+          <img src="images/blog1.jpg" alt="Blog Post 1">
+          <h3><a href="blog/post1.html">Blog Post Title 1</a></h3>
+          <p>One-line description of the blog post.</p>
+          <p class="date">Posted on: Date</p>
+        </article> -->
+        <!-- ... -->
+      </div>
+    </section>
+  </main>
 
-    <footer>
-        <!-- Same footer as in index.html -->
-    </footer>
+  <footer>
+    <div class="social-icons">
+      <a href="https://github.com/revanthsenthil" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:senthilr@purdue.edu" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/revanth-senthilkumaran" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://scholar.google.com/citations?user=p4oXJvQAAAAJ&hl=en" target="_blank" aria-label="Google Scholar">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+      <a href="https://twitter.com/revvozz" target="_blank" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+  </footer>
 
-    <script src="scripts/script.js"></script>
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
 </body>
+
+
 </html>
+

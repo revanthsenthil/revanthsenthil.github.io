@@ -120,7 +120,10 @@ main {
   margin-top: 3em;
 }
 
-.latest-posts h2,
+.latest-posts h2 {
+  margin-bottom: 1em;
+}
+
 .publications h2,
 .presentations h2,
 .blog-list h2 {

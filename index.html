@@ -1,124 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>revanth senthil</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <title>Home - Your Name</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Include Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    (function() {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="nav-item">Home</a></li>
-                <li><a href="research.html" class="nav-item">Research</a></li>
-                <!-- <li><a href="projects.html" class="nav-item">Projects</a></li> -->
-                <!-- <li><a href="blog.html" class="nav-item">Blog</a></li> -->
-                <li><a href="resume.html" class="nav-item">Resume</a></li>
-            </ul>
-    
-            </nav>
-    </header>
 
-    <main>
-        <section class="profile-section">
-            <div class="profile-description">
-                <h1>Revanth Krishna Senthilkumaran</h1>
-                <!-- <h5>"ray-vuh·nth"</h5> -->
-                <h4>B.S. Computer Engineering | Purdue University '25</h4>
-                <h4>Undergraduate Research Assistant | <a href="https://ideas.cs.purdue.edu/">IDEAS Laboratory</a></h4>
-                <h4>President | Autonomous Robotics Club of Purdue</h4>
-                <p><span class="typing-text"></span>
-                <!-- <span class="typing-cursor"></span> -->
-            </p>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/revanth-senthilkumaran" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/revanthsenthil" target="_blank" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://scholar.google.com/citations?user=p4oXJvQAAAAJ&hl=en" target="_blank" title="Google Scholar">
-                        <i class="fas fa-graduation-cap"></i> <!-- Assuming this icon for Google Scholar -->
-                    </a>
-                    <a href="https://twitter.com/revvozz" target="_blank" title="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="mailto:senthilr@purdue.edu" target="_blank" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="profile-photo-container">
-                <img src="assets/profile_real.jpg" alt="revanth krishna senthilkumaran" class="profile-photo">
-            </div>
-        </div>
-        </section>
+  <header>
+    <nav>
+      <span class="brand">revanth 🤖</span>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <!-- <li><a href="blog.html">Blog</a></li> -->
+        <li><a href="resume.html">Resume/CV</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle">🌙</button>
+  </header>
 
-        <hr>
+  <!-- Main Content -->
+  <main>
+    <section class="intro">
+      <img src="images/profile_real.jpg" alt="Revanth Krishna Senthilkumaran">
+      <div class="description">
+        <h1>Revanth Krishna Senthilkumaran</h1>
+        <p>Senior in Computer Engineering @ Purdue University</p>
+        <p>Undergraduate Research Assistant @ <a href="https://ideas.cs.purdue.edu/members/revanth.html" target="_blank">IDEAS Laboratory</a></p>
+        <p>Robotics Software Engineer Intern @ AeroVironment Inc.</p>
+        <p>President of <a href="https://www.purduearc.com" target="_blank">Autonomous Robotics Club of Purdue</a></p>
+        <br>
+        <p></p>
+      </div>
+    </section>
 
-        <section class="about-me">
-            <h3>About Me</h3>
-            <p>I'm in my final year of Computer Engineering at Purdue University, concentrating in <b>artificial intelligence/machine learning</b> and <b>computer systems</b>. I love robotics and want to work towards using robots to work with and improve humanity. I also want to improve the way robots perceive the world and increase the capability of using robots in a domestic setting with human beings.</p>
-            <p>Having done robotics research since 2021, I am eager to contribute significantly to the field. My primary interests at the moment include <b>perception</b>, <b>locomotion</b> and <b>human-robot interaction and collaboration</b>. I also lead the largest robotics club at Purdue (ARC), with a heavy focus on research.</p>
-            <p>Outside of these, I love playing basketball, the piano, geeking out over basketball and Formula 1, and trying new foods!</p>
+    <section class="about-me">
 
-        </section>
+      <div class="social-icons">
+        <a href="https://github.com/revanthsenthil" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:youremail@example.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://scholar.google.com/citations?user=yourid" target="_blank" aria-label="Google Scholar">
+          <i class="fas fa-graduation-cap"></i>
+        </a>
+        <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+    <br>
+    <p>I'm in my final year of Computer Engineering at Purdue University, concentrating in <b>artificial intelligence/machine learning</b> and <b>computer systems</b>. I love robotics and want to work towards using robots to work with and improve humanity. I also want to improve the way robots perceive the world and increase the capability of using robots in a domestic setting with human beings.</p>
 
-        <hr>    
+    <p>Having done robotics research since 2021, I am stepping towards contributing significantly to the field. My primary interests at the moment include <b>perception, manipulation and human-robot interaction and collaboration</b>. I also lead the largest robotics club at Purdue (ARC), with a heavy focus on research.</p>
 
-        <section class="updates-section">
-            <h3>What's Happening Lately?</h3>
-            <div class="update">
-                <a href="https://www.youtube.com/watch?v=FHIgouHpiHg&t=1s"><img src="assets/artemis-purcs.png" alt="Update 1" class="update-image"></a>
-                <div class="update-text">
-                    <h4>Awarded <a href="https://www.purdue.edu/undergrad-research/conferences/spring/archive/past-winners.php#:~:text=2nd%20Place%3A%20ARTEMIS%3A%20AI%2Ddriven%20Robotic%20Triage%20Labeling%20and%20Emergency%20Medical%20Information%20System%20by%20Revanth%20Krishna%20Senthilkumaran%3B%20Mridu%20Prashanth%0AMentors%3A%20Aniket%20Bera%3B%20Kshitij%20Tiwari%3B%20Hrishikesh%20Viswanath">2nd Place</a> for Research Talk on <a href="https://revanthsenthil.github.io/research.html#:~:text=papers-,ARTEMIS,-%3A%20AI%2DDriven%20Robotic">ARTEMIS</a></h4>
-                    <p><i>April 2024</i></p>
-                    <p>Gave research talk at Purdue Spring Undergraduate Research Expo 2024 and won the 2nd place award in the College of Science (Read paper <a href="https://arxiv.org/abs/2309.08865">here</a>). </p>
-                </div>
-            </div>
-            <!-- <div class="update">
-                <img src="assets/update2.jpg" alt="Update 2" class="update-image">
-                <div class="update-text">
-                    <h4>Update Title 2</h4>
-                    <p>Description of the second update...</p>
-                </div>
-            </div>
-            <div class="update">
-                <img src="assets/update3.jpg" alt="Update 3" class="update-image">
-                <div class="update-text">
-                    <h4>Update Title 3</h4>
-                    <p>Description of the third update...</p>
-                </div>
-            </div> -->
-        </section>
+    <p>Outside of these, I love playing basketball, the piano, geeking out over basketball and Formula 1, and trying new foods! </p>
 
-        <!-- Other content for your homepage -->
-    </main>
+    </section>  
 
-    <footer>
-        <!-- Footer content -->
-        <div class="footer-social-icons">
-            <a href="https://www.linkedin.com/in/revanth-senthilkumaran" target="_blank" title="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/revanthsenthil" target="_blank" title="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://scholar.google.com/citations?user=p4oXJvQAAAAJ&hl=en" target="_blank" title="Google Scholar">
-                <i class="fas fa-graduation-cap"></i> <!-- Assuming this icon for Google Scholar -->
-            </a>
-            <a href="https://twitter.com/revvozz" target="_blank" title="Twitter">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="mailto:senthilr@purdue.edu" target="_blank" title="Email">
-                <i class="fas fa-envelope"></i>
-            </a>
-        </div>
-    </footer>
+    <section class="latest-posts">
+      <h2>What's Happening Lately</h2>
+      <div class="posts">
+        <!-- Repeat this block for the last three blog posts -->
+        <article class="post">
+          <img src="images/artemis-purcs.png" alt="Blog Post 1">
+          <h3>Awarded <a href="https://www.purdue.edu/undergrad-research/conferences/spring/archive/past-winners.php#:~:text=2nd%20Place%3A%20ARTEMIS%3A%20AI%2Ddriven%20Robotic%20Triage%20Labeling%20and%20Emergency%20Medical%20Information%20System%20by%20Revanth%20Krishna%20Senthilkumaran%3B%20Mridu%20Prashanth%0AMentors%3A%20Aniket%20Bera%3B%20Kshitij%20Tiwari%3B%20Hrishikesh%20Viswanath" target="_blank">2nd Place</a> for Research Talk on ARTEMIS</h3>
+          <p><i>April 2024</i></p>
+          <p>Gave research talk at Purdue Spring Undergraduate Research Expo 2024 and won the 2nd place award in the College of Science (<a href="https://arxiv.org/abs/2309.08865">Read paper here</a>).</p>
+        </article>
+        <!-- ... -->
+      </div>
+    </section>
+  </main>
 
-    <script src="scripts/script.js"></script>
+  <!-- Footer (optional) -->
+  <footer>
+    <div class="social-icons">
+      <a href="https://github.com/revanthsenthil" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:senthilr@purdue.edu" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/revanth-senthilkumaran" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://scholar.google.com/citations?user=p4oXJvQAAAAJ&hl=en" target="_blank" aria-label="Google Scholar">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+      <a href="https://twitter.com/revvozz" target="_blank" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
 </body>
 </html>
+

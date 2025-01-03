@@ -14,7 +14,45 @@
       }
     })();
   </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- OPTIONAL override styles placed here (or in styles.css) to ensure images are small and on the left. -->
+  <style>
+    /* Override the default grid for the research items so each tile is a horizontal flex box */
+    .research-section .papers {
+      display: flex;
+      flex-direction: column; /* Stack each paper vertically */
+      gap: 2em;              /* Space between each paper */
+    }
+
+    /* Make each paper a row: image on the left, text on the right */
+    .research-section .paper {
+      display: flex;
+      align-items: flex-start; /* Align items to top */
+      gap: 1em;               /* Space between image and text */
+    }
+
+    /* Override the large width to make the image uniform and small */
+    .research-section .paper img {
+      width: 120px;      /* Or any fixed width you prefer, e.g., 150px */
+      height: 120px;     /* Keep it uniform if you want a square look */
+      object-fit: cover; /* Crop image to fill the 120×120 area */
+      margin-bottom: 0;  /* Remove any bottom margin if needed */
+    }
+
+    /* Also override for .latest-posts if needed */
+    .latest-posts .posts .post img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 0;
+    }
+
+    /* Make sure the text wraps nicely next to the image */
+    .paper .text-content {
+      flex: 1; /* So the text takes up remaining space */
+    }
+  </style>
 </head>
 <body>
 
@@ -23,7 +61,8 @@
       <span class="brand">revanth 🤖</span>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="research.html">Research</a></li>
+        <!-- Removed the separate Research link -->
+        <li><a href="index.html#publications">Research</a></li>
         <!-- <li><a href="blog.html">Blog</a></li> -->
         <li><a href="resume.html">Resume/CV</a></li>
       </ul>
@@ -33,6 +72,7 @@
 
   <!-- Main Content -->
   <main>
+    <!-- INTRO SECTION -->
     <section class="intro">
       <img src="images/profile_real.jpg" alt="Revanth Krishna Senthilkumaran">
       <div class="description">
@@ -46,8 +86,8 @@
       </div>
     </section>
 
+    <!-- ABOUT ME SECTION -->
     <section class="about-me">
-
       <div class="social-icons">
         <a href="https://github.com/revanthsenthil" target="_blank" aria-label="GitHub">
           <i class="fab fa-github"></i>
@@ -65,28 +105,157 @@
           <i class="fab fa-twitter"></i>
         </a>
       </div>
-    <br>
-    <p>I'm in my final year of Computer Engineering at Purdue University, concentrating in <b>artificial intelligence/machine learning</b> and <b>computer systems</b>. I love robotics and want to work towards using robots to work with and improve humanity. I also want to improve the way robots perceive the world and increase the capability of using robots in a domestic setting with human beings.</p>
+      <br>
+      <p>I'm in my final year of Computer Engineering at Purdue University, concentrating in <b>artificial intelligence/machine learning</b> and <b>computer systems</b>. I love robotics and want to work towards using robots to work with and improve humanity. I also want to improve the way robots perceive the world and increase the capability of using robots in a domestic setting with human beings.</p>
 
-    <p>Having done robotics research since 2021, I am stepping towards contributing significantly to the field. My primary interests at the moment include <b>perception, manipulation and human-robot interaction and collaboration</b>. I also lead the largest robotics club at Purdue (ARC), with a heavy focus on research.</p>
+      <p>Having done robotics research since 2021, I am stepping towards contributing significantly to the field. My primary interests at the moment include <b>perception, manipulation and human-robot interaction and collaboration</b>. I also lead the largest robotics club at Purdue (ARC), with a heavy focus on research.</p>
 
-    <p>Outside of these, I love playing basketball, the piano, geeking out over basketball and Formula 1, and trying new foods! </p>
-
+      <p>Outside of these, I love playing basketball, the piano, geeking out over basketball and Formula 1, and trying new foods!</p>
     </section>  
 
     <section class="latest-posts">
       <h2>What's Happening Lately</h2>
-      <div class="posts">
-        <!-- Repeat this block for the last three blog posts -->
-        <article class="post">
-          <img src="images/artemis-purcs.png" alt="Blog Post 1">
-          <h3>Awarded <a href="https://www.purdue.edu/undergrad-research/conferences/spring/archive/past-winners.php#:~:text=2nd%20Place%3A%20ARTEMIS%3A%20AI%2Ddriven%20Robotic%20Triage%20Labeling%20and%20Emergency%20Medical%20Information%20System%20by%20Revanth%20Krishna%20Senthilkumaran%3B%20Mridu%20Prashanth%0AMentors%3A%20Aniket%20Bera%3B%20Kshitij%20Tiwari%3B%20Hrishikesh%20Viswanath" target="_blank">2nd Place</a> for Research Talk on ARTEMIS</h3>
-          <p><i>April 2024</i></p>
-          <p>Gave research talk at Purdue Spring Undergraduate Research Expo 2024 and won the 2nd place award in the College of Science (<a href="https://arxiv.org/abs/2309.08865">Read paper here</a>).</p>
-        </article>
-        <!-- ... -->
+      <div class="updates">
+        <!-- Example update 1 -->
+        <p>
+          <strong>April 2024:</strong> 
+          Gave research talk at Purdue Spring Undergraduate Research Expo 2024 and 
+          <a href="https://arxiv.org/abs/2309.08865" target="_blank">won 2nd place</a>.
+        </p>
+        
+        <!-- Add more <p> blocks in the same pattern as needed -->
       </div>
     </section>
+    
+    <br id="publications">
+    <!-- ========== RESEARCH CONTENT BEGINS HERE ========== -->
+    <section class="research-section publications">
+      <h2>Publications</h2>
+      <div class="papers">
+
+        <!-- Paper 1 -->
+        <article class="paper">
+          <img src="images/artemis.png" alt="ARTEMIS">
+          <div class="text-content">
+            <h3>ARTEMIS: AI-Driven Robotic Triage Labeling and Emergency Information System</h3>
+            <p><strong>Authors:</strong> Revanth Krishna Senthilkumaran, Mridu Prashanth, Hrishikesh Viswanath, Sathvika Kotha, Kshitij Tiwari, Aniket Bera</p>
+            <p><strong>Status:</strong> Under review in IEEE-ICRA 2025</p>
+            <div class="links">
+              <a href="abstracts/artemis.txt" target="_blank">Read Abstract</a> <br>
+              <a href="https://arxiv.org/abs/2309.08865" target="_blank">Read Paper</a> <br>
+              <a href="https://www.youtube.com/watch?v=4FU4FRxNwmY" target="_blank">Watch Video</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Paper 2 -->
+        <article class="paper">
+          <img src="images/upplied.png" alt="UPPLIED">
+          <div class="text-content">
+            <h3>UPPLIED: UAV Path Planning for Learning from Demonstration</h3>
+            <p><strong>Authors:</strong> Shyam Sundar Kannan*, Vishnunandan L. N. Venkatesh*, Revanth Krishna Senthilkumaran, Byung-Cheol Min</p>
+            <p><small>* Equal Contribution</small></p>
+            <p><strong>Status:</strong> PUBLISHED in IEEE-IROS 2023</p>
+            <div class="links">
+              <a href="abstracts/upplied.txt" target="_blank">Read Abstract</a> <br>
+              <a href="https://arxiv.org/abs/2303.04284" target="_blank">Read Paper</a> <br>
+              <a href="https://www.youtube.com/watch?v=YqPx-cLkv04" target="_blank">Watch Video</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Paper 3 -->
+        <article class="paper">
+          <img src="images/mocas.png" alt="MOCAS">
+          <div class="text-content">
+            <h3>MOCAS: A Multimodal Dataset for Objective Cognitive Workload Assessment on Simultaneous Tasks</h3>
+            <p><strong>Authors:</strong> Wonse Jo*, Ruiqi Wang*, Su Sun, Revanth Krishna Senthilkumaran, Daniel Foti, Byung-Cheol Min</p>
+            <p><small>* Equal Contribution</small></p>
+            <p><strong>Status:</strong> PUBLISHED in IEEE-TAFFC 2024</p>
+            <div class="links">
+              <a href="abstracts/mocas.txt" target="_blank">Read Abstract</a> <br>
+              <a href="https://arxiv.org/abs/2210.03065" target="_blank">Read Paper</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Paper 4 -->
+        <article class="paper">
+          <img src="images/smartmbot.png" alt="SMARTmBOT">
+          <div class="text-content">
+            <h3>SMARTmBOT: A ROS2-based Low-cost and Open-source Mobile Robot Platform</h3>
+            <p><strong>Authors:</strong> Wonse Jo, Jaeeun Kim, Ruiqi Wang, Jeremy Pan, Revanth Krishna Senthilkumaran, Byung-Cheol Min</p>
+            <p><strong>Status:</strong> Submitted to IEEE-IROS 2022</p>
+            <div class="links">
+              <a href="abstracts/smartmbot.txt" target="_blank">Read Abstract</a> <br>
+              <a href="https://arxiv.org/abs/2203.08903" target="_blank">Read Paper</a> <br>
+              <a href="https://github.com/SMARTlab-Purdue/SMARTmBOT" target="_blank">GitHub Repository</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="research-section presentations">
+      <h2>Presentations</h2>
+      <div class="papers">
+
+        <!-- Presentation 1 -->
+        <article class="paper">
+          <img src="images/dcmm_lfd.png" alt="Data Collection for Mobile Manipulators">
+          <div class="text-content">
+            <h3>Data Collection for Mobile Manipulators for Learning from Demonstration</h3>
+            <p><strong>Status:</strong> Presented at University of Minnesota Summer URC 2023</p>
+            <div class="links">
+              <a href="abstracts/spot-data.txt" target="_blank">Read Abstract</a> <br>
+              <a href="pdf/umn_poster_spot.pdf" target="_blank">View Poster</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Presentation 2 -->
+        <article class="paper">
+          <img src="images/vf-plume.png" alt="VF-PLUME">
+          <div class="text-content">
+            <h3>VF-PLUME: Vertical Farming Plant Localizing UAV with Mass Estimation</h3>
+            <p><strong>Status:</strong> Presented at Purdue Spring URC 2023</p>
+            <div class="links">
+              <a href="abstracts/vf-plume.txt" target="_blank">Read Abstract</a> <br>
+              <a href="pdf/VF-PLUME.pdf" target="_blank">View Presentation</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Presentation 3 -->
+        <article class="paper">
+          <img src="images/dynamic_cogwl.png" alt="Dynamic Cognitive Workload Allocation">
+          <div class="text-content">
+            <h3>A Dynamic Cognitive Workload Allocation Method for Human Robot Interaction</h3>
+            <p><strong>Status:</strong> Presented at Purdue Fall URC 2022</p>
+            <div class="links">
+              <a href="abstracts/f22_expo.txt" target="_blank">Read Abstract</a> <br>
+              <a href="pdf/f22_expo.pdf" target="_blank">View Poster</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Presentation 4 -->
+        <article class="paper">
+          <img src="images/gui_wl.png" alt="GUI for Measuring Cognitive Workload">
+          <div class="text-content">
+            <h3>A GUI for Measuring Cognitive Workload Stimulus in Human Robot Interaction</h3>
+            <p><strong>Status:</strong> Presented at Purdue Spring URC 2022</p>
+            <div class="links">
+              <a href="abstracts/gui_cognitive_workload.txt" target="_blank">Read Abstract</a> <br>
+              <a href="https://www.youtube.com/watch?v=dA7AgpW2gYk" target="_blank">Watch Talk</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+    <!-- ========== RESEARCH CONTENT ENDS HERE ========== -->
   </main>
 
   <!-- Footer (optional) -->
@@ -114,4 +283,3 @@
   <script src="js/script.js"></script>
 </body>
 </html>
-

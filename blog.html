@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Blog - Your Name</title>
+  <title>Blog - Revanth Senthil</title>
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <!-- In the <head> section -->
   <script>
     (function() {
       var theme = localStorage.getItem('theme');
@@ -15,55 +14,89 @@
     })();
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Override the default grid for the research items so each tile is a horizontal flex box */
+    .blog-section .papers {
+      display: flex;
+      flex-direction: column; /* Stack each paper vertically */
+      gap: 2em;              /* Space between each paper */
+    }
 
+    /* Make each paper a row: image on the left, text on the right */
+    .blog-section .paper {
+      display: flex;
+      align-items: flex-start; /* Align items to top */
+      gap: 1em;               /* Space between image and text */
+    }
+
+    /* Override the large width to make the image uniform and small */
+    .blog-section .paper img {
+      width: 120px;      /* Or any fixed width you prefer, e.g., 150px */
+      height: 120px;     /* Keep it uniform if you want a square look */
+      object-fit: cover; /* Crop image to fill the 120×120 area */
+      margin-bottom: 0;  /* Remove any bottom margin if needed */
+    }
+
+    /* Also override for .latest-posts if needed */
+    .latest-posts .posts .post img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 0;
+    }
+
+    /* Make sure the text wraps nicely next to the image */
+    .paper .text-content {
+      flex: 1; /* So the text takes up remaining space */
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <nav>
-      <span class="brand">revanth 🤖</span>
+      <span class="brand"><a href="index.html">revanth 🤖</a></span>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="research.html">Research</a></li>
-        <!-- <li><a href="blog.html">Blog</a></li> -->
+        <li><a href="index.html#publications">Research</a></li>
+        <li><a href="blog.html">Blog</a></li>
         <li><a href="resume.html">Resume/CV</a></li>
       </ul>
     </nav>
     <button id="theme-toggle">🌙</button>
   </header>
-  <!-- ... -->
 
   <!-- Main Content -->
   <main>
-    <section class="blog-list">
-      <h2>Blog</h2>
-      <div class="posts">
-        <!-- Repeat this block for each blog post -->
-        <article class="post">
-          <img src="images/blog1.jpg" alt="Blog Post 1">
-          <h3><a href="blog/post1.html">Blog Post Title 1</a></h3>
-          <p>One-line description of the blog post.</p>
-          <p class="date">Posted on: Date</p>
+    <section class="blog-section">
+      <h2 class="section-title">Blog</h2>
+      <div class="papers">
+
+        <article class="paper">
+          <img src="images/iros_me.jpg" alt="Blog Post 2">
+          <div class="text-content">
+            <h3><a href="blog/post2.html">Attending my first robotics conference: IROS 2023</a></h3>
+            <p>With the UPPLIED paper published, I attended IROS 2023!</p>
+            <p><strong>Posted on:</strong> December 10, 2023</p>
+          </div>
         </article>
 
-        <!-- <article class="post">
-          <img src="images/blog1.jpg" alt="Blog Post 1">
-          <h3><a href="blog/post1.html">Blog Post Title 1</a></h3>
-          <p>One-line description of the blog post.</p>
-          <p class="date">Posted on: Date</p>
+        <!-- Blog Post 1 -->
+        <article class="paper">
+          <img src="images/spot_stand.jpg" alt="Blog Post 1">
+          <div class="text-content">
+            <h3><a href="blog/post1.html">ROS TFs? What are they?</a></h3>
+            <p>The TF package in ROS helps make coordinate transforms better represented and I enjoyed working with them over the Summer of 2023!</p>
+            <p><strong>Posted on:</strong> August 20, 2023</p>
+          </div>
         </article>
 
-        <article class="post">
-          <img src="images/blog1.jpg" alt="Blog Post 1">
-          <h3><a href="blog/post1.html">Blog Post Title 1</a></h3>
-          <p>One-line description of the blog post.</p>
-          <p class="date">Posted on: Date</p>
-        </article> -->
-        <!-- ... -->
+        <!-- Additional blog posts can follow the same format -->
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <div class="social-icons">
       <a href="https://github.com/revanthsenthil" target="_blank" aria-label="GitHub">
@@ -84,10 +117,6 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
   <script src="js/script.js"></script>
 </body>
-
-
 </html>
-

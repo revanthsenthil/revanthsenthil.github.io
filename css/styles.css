@@ -51,6 +51,7 @@ nav .brand {
   font-weight: bold;
   font-size: 1.5em;
   color: var(--text-color);
+  text-decoration: none;
   margin-right: auto;
 }
 
@@ -92,6 +93,13 @@ main {
   color: var(--text-color);
 }
 
+.brand a:link, .brand a:visited, .brand a:hover, .brand a:active {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+
+
 .intro img {
   border-radius: 50%;
   width: 200px;
@@ -127,7 +135,8 @@ main {
 
 .publications h2,
 .presentations h2,
-.blog-list h2 
+.blog-list h2, 
+.blog-section h2,
 .latest-posts h2{
   margin-bottom: 1em;
   text-align: center;
@@ -151,6 +160,10 @@ main {
   border: 1px solid var(--text-color);
   padding: 1.5em;
   transition: background-color 0.3s, border-color 0.3s;
+}
+
+.paper .text-content {
+  flex: 1;
 }
 
 .post img,

@@ -184,7 +184,8 @@ main {
 }
 
 .post a,
-.paper a {
+.paper a, 
+article a{
   color: var(--link-color);
   text-decoration: none;
 }

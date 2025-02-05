@@ -39,6 +39,11 @@
     .blog-navigation .nav-button:nth-child(2) {
       margin: 0 2%; /* Space between buttons */
     }
+
+    .blog-navigation .dummy {
+      display: none;
+    }
+
     .blog-content {
       max-width: 90%;
       margin: 0 auto;
@@ -53,14 +58,34 @@
       font-family: 'Courier New', Courier, monospace;
       font-size: 0.9em;
     }
+
+    .blog-content code{
+      background-color: var(--background-color);
+      color: var(--text-color);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.9em;
+    }
+
     .blog-content img {
       max-width: 100%;
       height: auto;
       margin: 1em 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
     .blog-content ul, .blog-content ol {
       margin: 1em 0;
       margin-left: 2em;
+    }
+
+    .blog-content caption{
+      font-size: 0.8em;
+      color: var(--text-color);
+      text-align: center;
+      margin-top: 0.5em;
     }
   </style>
 </head>
@@ -81,51 +106,49 @@
 
   <!-- Blog Navigation (Top) -->
   <nav class="blog-navigation">
-    <a href="#" class="nav-button" disabled>Previous</a>
+    <!-- <a href="#" class="dummy" disabled>Previous</a> -->
     <a href="../blog.html" class="nav-button">Back to Blog</a>
-    <a href="post2.html" class="nav-button">Next</a>
+    <!-- <a href="post2.html" class="nav-button">Next (IROS 2023)</a> -->
   </nav>
 
   <!-- Main Content -->
   <main>
     <article class="blog-content">
-      <h1>ROS TFs? What are they? (CONTENT NOT FULLY TRANSFERRED OVER YET)</h1>
+      <h1><center>ROS TFs: What are they? Why use them?</center></h1>
       <p>
-        The TF package in ROS is incredibly useful for handling coordinate transformations.
+        The TF package in ROS is incredibly useful for handling <b>coordinate transformations</b>.
         It simplifies managing coordinate frames and allows for a clear representation of
-        transforms between them in robotics applications.
+        transforms between them in robotics applications. I used TFs extensively in my work in the Summer of 2023
+        with the <i>University of Minnesota's Robotics Perception and Manipulation Laboratory 
+        (<a href="https://rpm-lab.github.io/" target="_blank">RPM Lab</a>) under Prof. Karthik Desingh</i>. Working with the Boston Dynamics Spot robot 
+        quadruped (Figure 1), I used a system with multiple cameras and actuators and control it 
+        completely from the ground-up. TFs were crucial in this process, as they allowed me
+        to keep track of the robot's position and orientation in the world frame.
       </p>
+
+
+      <img src="../images/spot_stand.jpg" alt="Boston Dynamics Spot Robot" style="width: 60%;">
+
+      <caption><center><i>Figure 1: Boston Dynamics Spot Robot Quadruped that I used at RPM Lab. The robot has multiple sets of cameras, including RGB-D and Pointcloud representation of images from each set. The front has two sets of cameras facing inwards, cameras exist on the right and left sides of the robot, and there are cameras on the back too. There is a set of cameras on the end effector of the arm as well. TFs helped represent each of these in a clean transform manner with respect to the body frame of the robot, with <code>/tf</code> topic(s) representing the transform between the robot and the world frame through GPS and IMU data.</i></center></caption>
+      <br>
+      <br>
 
       <h2>What are TFs?</h2>
       <p>
-        TFs (Transforms) allow robots to keep track of multiple coordinate frames over time. For example:
+        TFs (Transforms) allow robots to keep track of multiple coordinate frames over time. You 
+        would be able to answer questions like:
       </p>
       <ul>
         <li>Where is the camera frame relative to the robot base?</li>
         <li>How is the end-effector of a robotic arm positioned in the world frame?</li>
+        <li>Where was the head frame relative to the world frame, T seconds ago?</li>
       </ul>
 
-      <h3>Example Code</h3>
-      <p>Here’s a small snippet demonstrating TF broadcasting in ROS:</p>
-      <pre>
-import rospy
-import tf
-from geometry_msgs.msg import TransformStamped
-
-rospy.init_node('tf_broadcaster')
-broadcaster = tf.TransformBroadcaster()
-
-rate = rospy.Rate(10)
-while not rospy.is_shutdown():
-    broadcaster.sendTransform(
-        (1.0, 2.0, 0.0),
-        tf.transformations.quaternion_from_euler(0, 0, 1.57),
-        rospy.Time.now(),
-        "child_frame",
-        "parent_frame"
-    )
-    rate.sleep()
-      </pre>
+      <i>Fun Fact, TFs are named TFs partially due to the developer who made them - 
+        <a href="http://wiki.ros.org/Papers/TePRA2013_Foote?action=AttachFile&do=get&target=TePRA2013_Foote.pdf" target="_blank">Tully Foote</a>.</i>
+      
+      <br>
+      <br>
 
       <h2>Why Use TFs?</h2>
       <p>TFs make handling complex systems much easier by:</p>
@@ -135,18 +158,279 @@ while not rospy.is_shutdown():
         <li>Reducing manual calculations of transforms.</li>
       </ol>
 
-      <img src="../images/ros_tf_graph.png" alt="ROS TF Graph Example">
+      <h3>Getting Started with TFs</h3>
+
       <p>
-        In this example, the transform tree shows how frames are interconnected in a robotic system.
+
+        The ROS website has links to <a href="http://wiki.ros.org/tf2/Tutorials" target="_blank">tutorials</a> 
+        to understand how exactly they work but what I am doing here is to highlight the essence of TFs to 
+        understand how exactly they are useful while working with robots. Transforms of any sort are required 
+        when working with robots of multiple components. Defining a transform between two different links and 
+        using it to transform data from one link to another is a common practice in robotics. TFs in ROS provide 
+        this functionality in a very easy-to-use manner, which is evident in robots with more than just a couple links 
+        or sensors.
+
       </p>
+      <br>
+      <p>
+        The<code>tf</code> package has been <a href="http://wiki.ros.org/tf2/Migration" target="_blank">deprecated</a> and the move has 
+        been made to the <code>tf2_ros</code> package. <code>tf2</code> has been the successor to <code>tf</code> and is widely used in ROS2 to represent transforms. Packages like <code>tf2_geometry_msgs</code> and <code>tf2_py</code> are used along with <code>tf2</code>to represent transforms in ROS2.
+      </p>
+      <br>
+
+      <h4>More links to get started with TFs:</h4>
+      <ul>
+        <li><a href="http://wiki.ros.org/tf2/Tutorials/Introduction%20to%20tf2" target="_blank">ROS Tutorials: Introduction to tf2</a>: this link also gives instructions to run a simple <code>turtle_tf2</code> demo, that can be installed with <code>sudo apt-get install</code>. You can also access more ROS <code>tf2</code> tutorials <a href="http://wiki.ros.org/tf2/Tutorials" target="_blank">here</a>.</li>
+        <li><a href="https://ros2-industrial-workshop.readthedocs.io/en/latest/_source/navigation/ROS2-TF2.html" target="_blank">ROS2 Industrial Workshop Docs for <code>tf2</code></a></li>
+        <li><a href="https://articulatedrobotics.xyz/tutorials/ready-for-ros/tf/" target="_blank">Articulated Robotics article and demo on <code>tf2</code></a></li>
+      </ul>
+
+      <h3>Representing Data in TFs</h3>
+      <p>
+        TFs are represented as <code>TransformStamped</code> messages in ROS. These messages contain the following fields:
+      </p>
+
+      <pre>
+std_msgs/Header header
+string child_frame_id
+Transform transform
+      </pre>
+
+      <br>
+
+      <p>
+        One of the coolest things about <code>tf2</code> is the Buffer. The Buffer is a class that stores all the transforms in a tree structure. It can be used to query transforms between different frames. It's a powerful tool that can be used to store all the transforms in a system and query them at any time. Functions like <code>lookup_transform</code> and <code>all_frames_as_yaml</code> are used to query transforms and print all frames in the buffer, respectively. <code>set_transform</code> is used to add a transform to the buffer.
+      </p>
+
+      <br>
+      <h3>How I used TFs</h3>
+
+      <p>
+        Here's a piece of code I wrote when working in RPM Lab to get data from Spot.
+        The public Gist is available <a href="https://gist.github.com/revanthsenthil/237401b741aa8f46b56fa496a2ded1e8" target="_blank">
+          here</a>. I wrote a <code>_dummy_test()</code> function to test my TF2 Buffer as well.
+      </p>
+      
+      <!-- <script src="https://gist.github.com/revanthsenthil/237401b741aa8f46b56fa496a2ded1e8.js"></script> -->
+      
+      <pre>
+### import modules ###
+
+# dataset containing rosbag
+from rosbag2dataset import dataset
+
+import rospy
+
+# import tf2_geometry_msgs
+from geometry_msgs.msg import TransformStamped 
+from geometry_msgs.msg import Quaternion as q
+from tf2_ros import TransformException
+from tf2_ros import Buffer
+# import tf2_msgs
+import tf2_py as tf2
+import sys
+
+##### helper functions #####
+
+def _transfer_to_ref_frame(tf_buffer, topics, topic_ref='body'):
+    '''
+    Transforms set topics on tf_buffer to reference topic and returns an updated buffer.
+    Args:
+        tf_buffer (Buffer): tf2 buffer containing all transforms
+        topics (list): list of topics to get transforms from
+        topic_ref (str): reference topic to get transforms to
+            default: 'body'
+    Returns:
+        tf_buffer_updated (Buffer): updated tf2 buffer containing all transforms to reference topic
+    '''
+
+    # using an updated tf_buffer to store transforms to reference frame
+    tf_buffer_updated = tf_buffer
+
+    # getting all transforms to reference frame
+    for topic in topics:
+        try:
+            # getting transform from topic to reference topic
+            transform = tf_buffer.lookup_transform(topic_ref, topic, rospy.Time())
+
+            # adding transform to updated buffer
+            tf_buffer_updated.set_transform(transform, transform.header.frame_id)
+            print("------------------------")
+            print("pose from " + topic + " to " + topic_ref)
+            print("------------------------")
+            print(transform)
+
+        except tf2.LookupException as e:
+            print("There either is an invalid quaternion or a frame is not found.")
+            print(e)
+
+    return tf_buffer_updated
+
+def _dummy_test(tf_buffer, val1=[1, 1, 1, 0, 0, 0, 1], 
+                                   val2=[0, 2, 1, 0, 0, 0, 1], val3=[0, 0, 0, 0, 0, 0, 1]):
+    '''
+    Creates dummy TransformStamped messages to be sent into buffer and displayed.
+    Args:
+        val1 (list): list of pose values for dummy header w.r.t. dummy child
+            default: [1, 1, 1, 0, 0, 0, 1]
+        val2 (list): list of pose values for dummy leaf1 w.r.t. dummy child
+            default: [0, 2, 1, 0, 0, 0, 1]
+        val3 (list): list of pose values for dummy leaf2 w.r.t. dummy child
+            default: [0, 0, 0, 0, 0, 0, 1]
+    '''
+
+    # creating dummy pose1
+    pose1 = TransformStamped()
+    pose1.header.frame_id = 'dummy_header'
+    pose1.header.stamp = rospy.Time()
+    pose1.child_frame_id = 'dummy_child' # dummy child is a child for dummy header
+    pose1.transform.translation.x, pose1.transform.translation.y, pose1.transform.translation.z = val1[0:3]
+    quat = q(val1[3], val1[4], val1[5], val1[6])
+    # quat = q.normalize(quat)
+    pose1.transform.rotation.x, pose1.transform.rotation.y, pose1.transform.rotation.z, pose1.transform.rotation.w = quat.x, quat.y, quat.z, quat.w
+
+    # creating dummy pose2
+    pose2 = TransformStamped()
+    pose2.header.frame_id = 'dummy_child'
+    pose2.header.stamp = rospy.Time()
+    pose2.child_frame_id = 'dummy_leaf1' # dummy leaf1 is a child for dummy child
+    pose2.transform.translation.x, pose2.transform.translation.y, pose2.transform.translation.z = val2[0:3]
+    quat2 = q(val2[3], val2[4], val2[5], val2[6])
+    # quat2 = q.normalize(quat2)
+    pose2.transform.rotation.x, pose2.transform.rotation.y, pose2.transform.rotation.z, pose2.transform.rotation.w = quat2.x, quat2.y, quat2.z, quat2.w
+
+    # creating dummy pose3
+    pose3 = TransformStamped()
+    pose3.header.frame_id = 'dummy_child'
+    pose3.header.stamp = rospy.Time()
+    pose3.child_frame_id = 'dummy_leaf2' # dummy leaf2 is a child for dummy child
+    pose3.transform.translation.x, pose3.transform.translation.y, pose3.transform.translation.z = val3[0:3]
+    quat3 = q(val3[3], val3[4], val3[5], val3[6])
+    # quat3 = q.normalize(quat3)
+    pose3.transform.rotation.x, pose3.transform.rotation.y, pose3.transform.rotation.z, pose3.transform.rotation.w = quat3.x, quat3.y, quat3.z, quat3.w
+    
+    # adding dummy poses to buffer
+    tf_buffer.set_transform(pose1, pose1.header.frame_id)
+    tf_buffer.set_transform(pose3, pose3.header.frame_id)
+    tf_buffer.set_transform(pose2, pose2.header.frame_id)
+    
+    try:
+        # printing the two leaves' relation to dummy_child
+        print("------------------------")
+        print("pose from leaf1 to child")
+        print("------------------------")
+        print(tf_buffer.lookup_transform("dummy_leaf1", "dummy_child", rospy.Time()))
+        print("------------------------")
+        print("pose from leaf2 to child")
+        print("------------------------")
+        print(tf_buffer.lookup_transform("dummy_leaf2", "dummy_child", rospy.Time()))
+
+        # printing one of the two leaves' relation to dummy_header
+        print("------------------------")
+        print("pose from leaf1 to header")
+        print(tf_buffer.lookup_transform("dummy_header", "dummy_leaf1", rospy.Time()))
+        print("------------------------")
+
+    except tf2.LookupException as e:
+        print("There either is an invalid quaternion or a frame is not found.")
+        print(e)
+    
+    return
+
+##### main function #####
+
+def main():
+
+    # input arguments for topics to get relative transforms from
+    topic_ref = sys.argv[1] # --ref == reference topic
+    if topic_ref not in ['--ref', '-r']:
+        topics = sys.argv[1:]
+        topic_ref = 'body'
+    else:
+        topic_ref = sys.argv[2]
+        topics = sys.argv[3:]
+
+    # getting topics from dataset
+    # type of static data: TransformStamped
+    tf_static_data = list(dict(dataset[0])['tf_static'].transforms)
+
+    #odom_data = dict(dataset[0])['odom']
+    # print(odom_data)
+
+    # tf2 buffers usually have a try and except framework,
+    # checking for TransformException
+    try:
+
+        # creating tf2 buffer
+        tf_buffer = Buffer()
+
+        # dummy_test (comment out when actual dataset is used)
+        # _dummy_test(tf_buffer)
+
+        # adding static transforms to buffer
+        for static_indiv in tf_static_data:
+            tf_buffer.set_transform(static_indiv, static_indiv.header.frame_id)
+            # print(tf_buffer.lookup_transform(static_indiv.header.frame_id, static_indiv.child_frame_id, rospy.Time()))
+        
+        # printing all frames in buffer
+        # print(tf_buffer.all_frames_as_yaml())
+
+        # getting all transforms to reference frame
+        tf_buffer_updated = _transfer_to_ref_frame(tf_buffer, topics, topic_ref)
+
+        # printing all frames in updated buffer
+        # print(tf_buffer_updated.all_frames_as_yaml())            
+
+    except TransformException as e:
+        # printing error type and error
+        print(type(e))
+        print(e)
+
+
+if __name__ == '__main__':
+    main()
+      </pre>
+      <br>
+      <h3>Some other useful things from<code>tf2</code>:</h3>
+      <ul>
+        <li><code>tf2_ros</code> provides a <code>TransformListener</code> class that can be used to listen to transforms from a <code>tf2</code> buffer.</li>
+        <li><code>tf2_geometry_msgs</code> provides functions to convert between <code>tf2</code> and <code>geometry_msgs</code> messages.</li>
+        <li>Exceptions like <code>TransformException</code>, <code>LookupException</code> can be 
+        used with the <code>tf2</code> package to handle errors in transforms.</li>
+        <li>
+          <code>tf2_ros</code> also provides a <code>BufferClient</code> class that can be used to 
+          connect to a <code>tf2</code> buffer server and get transforms from it.
+        </li>
+      </ul>
+      <p>
+        There are so many more useful things that can be done with <code>tf2</code> and I hope this
+        post gives you a good idea of what they are and how they can be used. <code>tf2</code> is a foundation for many robotics projects and is a great tool to have in your toolbox.
+      </p>
+
+      <p>
+        The greatest tool for picking up any ROS package is the <a href="http://wiki.ros.org" target="_blank">ROS Wiki</a> and the official ROS website itself.
+      </p>
+
+      <br>
+
+      <h3>References and Useful Links</h3>
+      <ul>
+        <li><a href="http://wiki.ros.org/tf2/Tutorials/Introduction%20to%20tf2" target="_blank">ROS Tutorials: Introduction to tf2</a>, <a href="http://wiki.ros.org/tf2/Tutorials" target="_blank">tutorials</a></li>
+        <li><a href="https://www.youtube.com/watch?app=desktop&v=_t4HZ8r_qFM&t=163s" target="_blank">YouTube: All you need to know about TF and TF2 in ROS | Tutorial</a></li>
+        <li><a href="https://docs.hello-robot.com/0.2/stretch-tutorials/ros1/example_10/" target="_blank">Stretch robot <code>tf2</code> demo and explanation</a></li>
+        <li><a href="https://stackoverflow.com/questions/tagged/tf2-ros" target="_blank">Stack overflow tag </a></li>
+
+      </ul>
+
+
     </article>
   </main>
 
   <!-- Blog Navigation (Bottom) -->
   <nav class="blog-navigation">
-    <a href="#" class="nav-button" disabled>Previous</a>
+    <!-- <a href="#" class="dummy" disabled>Previous</a> -->
     <a href="../blog.html" class="nav-button">Back to Blog</a>
-    <a href="post2.html" class="nav-button">Next</a>
+    <!-- <a href="post2.html" class="nav-button">Next (IROS 2023)</a> -->
   </nav>
 
   <!-- Footer -->

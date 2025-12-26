@@ -1064,26 +1064,113 @@ footer {
 }
 
 /* ========================================
+   HAMBURGER MENU
+   ======================================== */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+}
+
+.hamburger:hover {
+  border-color: var(--accent-color);
+  background-color: var(--bg-secondary);
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ========================================
    RESPONSIVE DESIGN
    ======================================== */
 
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
-    gap: var(--spacing-md);
-    padding: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hamburger {
+    display: flex;
   }
 
   nav {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: var(--spacing-md);
-    width: 100%;
+    flex: 1;
   }
 
   nav ul {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--spacing-lg);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
     flex-direction: column;
-    gap: var(--spacing-md);
-    justify-content: center;
+    gap: 0;
+    width: 100%;
+  }
+
+  nav.active ul {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  nav ul li {
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  nav ul li:last-child {
+    border-bottom: none;
+  }
+
+  nav ul a {
+    display: block;
+    padding: var(--spacing-md);
+    font-size: 1rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  nav ul a:hover {
+    background-color: var(--bg-secondary);
   }
 
   main {
@@ -1125,9 +1212,5 @@ footer {
 
   .social-icons {
     gap: var(--spacing-md);
-  }
-
-  nav a {
-    font-size: 0.9rem;
   }
 }

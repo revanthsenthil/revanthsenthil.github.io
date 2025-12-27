@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>projects — revanth senthil</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <span class="brand"><a href="index.html">🤖 revanth</a></span>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="index.html#publications">research</a></li>
+        <li><a href="blog.html">blog</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="resume.html">cv</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+  </header>
+
+  <main>
+    <section class="blog-section">
+      <h2>projects</h2>
+      <div class="papers">
+        
+        <!-- Piano Hand Project -->
+        <article class="paper">
+          <img src="images/pianohand.gif" alt="Piano Hand Robot">
+          <div class="text-content">
+            <h3>piano hand</h3>
+            <p>An autonomous robotic hand capable of playing the piano. The system integrates perception (optical music recognition), algorithms (Viterbi-based finger planning), hardware (custom 3D-printed hand with servo actuation), and simulation (ROS-based testing environment).</p>
+            <p><strong>Key Features:</strong> Sheet music scanning and parsing • Optimal finger positioning algorithms • Custom tendon-driven mechanism • Multi-agent coordination • Real-time servo control</p>
+            <p><strong>Tech Stack:</strong> C++ • Python • ROS2 • Arduino/ESP32 • Computer Vision • 3D CAD/Printing</p>
+            <div class="links">
+              <a href="https://github.com/purdue-arc/arc-piano-hand" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PromptMove AI Project -->
+        <article class="paper">
+          <img src="images/video_normal.gif" alt="PromptMove AI Simulation">
+          <div class="text-content">
+            <h3>promptmove ai</h3>
+            <p>A natural language-driven embodied AI system enabling people with disabilities to control robots in simulated domestic environments through conversational interfaces. Built on VirtualHome simulation platform with LLM-based task planning for household assistance tasks.</p>
+            <p><strong>Key Features:</strong> Voice & text command interface • GPT-4 powered task understanding • Real-time 3D environment simulation • Multi-agent coordination • Speech transcription • Automated video generation</p>
+            <p><strong>Tech Stack:</strong> Python • OpenAI API • VirtualHome • Streamlit • Speech Recognition</p>
+            <div class="links">
+              <a href="https://github.com/revanthsenthil/promptmove-ai" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-icons">
+      <a href="https://github.com/revanthsenthil" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:revanths@andrew.cmu.edu" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/revanth-senthilkumaran" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://scholar.google.com/citations?hl=en&user=VZEqvu8AAAAJ" target="_blank" aria-label="Google Scholar">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+      <a href="https://twitter.com/revvozz" target="_blank" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

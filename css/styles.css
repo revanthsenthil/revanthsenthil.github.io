@@ -192,6 +192,18 @@ main {
   border: 2px solid var(--accent-color);
 }
 
+.intro p a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.intro p a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
 .description {
   flex: 1;
   display: flex;

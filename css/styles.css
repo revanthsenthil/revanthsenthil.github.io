@@ -181,6 +181,15 @@ main {
   background-color: var(--bg-secondary);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.intro > img,
+.intro > .description {
+  position: relative;
+  z-index: 1;
 }
 
 .intro img {
@@ -225,6 +234,40 @@ main {
   margin-bottom: var(--spacing-md);
 }
 
+.description .role {
+  line-height: 1.7;
+}
+
+.description .research-summary {
+  color: var(--text-primary);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  max-width: 620px;
+  margin-top: var(--spacing-sm);
+}
+
+.intro-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.intro-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+}
+
+.intro-links a:hover {
+  border-color: var(--accent-color);
+  text-decoration: none;
+}
+
 /* ========================================
    ABOUT ME SECTION
    ======================================== */
@@ -235,12 +278,76 @@ main {
   background-color: var(--bg-secondary);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
 }
 
 .about-content {
   max-width: 800px;
   margin: 0 auto var(--spacing-xl);
+  position: relative;
   text-align: left;
+  z-index: 1;
+}
+
+.about-me > .social-icons {
+  position: relative;
+  z-index: 1;
+}
+
+.robot-arms {
+  display: block;
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.robot-arms svg {
+  height: 100%;
+  overflow: visible;
+  width: 100%;
+}
+
+.robot-arm {
+  color: var(--text-secondary);
+  opacity: 0.16;
+  transition: color 180ms ease, opacity 180ms ease;
+}
+
+.robot-arm.is-reaching {
+  color: var(--accent-color);
+  opacity: 0.3;
+}
+
+.arm-link,
+.arm-palm,
+.arm-finger {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.arm-link {
+  stroke-width: 4;
+}
+
+.arm-link-lower {
+  stroke-width: 3;
+}
+
+.arm-joint {
+  fill: var(--bg-secondary);
+  stroke: currentColor;
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.arm-palm,
+.arm-finger {
+  stroke-width: 2.5;
 }
 
 .about-me h2 {
@@ -248,7 +355,7 @@ main {
   font-weight: 800;
   margin-bottom: var(--spacing-lg);
   color: var(--text-primary);
-  text-align: center;
+  text-align: left;
 }
 
 .about-me p {
@@ -275,18 +382,42 @@ main {
   font-weight: 700;
 }
 
-.research-interests {
-  background-color: var(--bg-primary);
+.about-me .research-vision {
+  color: var(--text-primary);
+  font-size: 1.12rem;
+  line-height: 1.75;
+}
+
+.current-work {
+  margin: var(--spacing-xl) 0;
   padding: var(--spacing-lg);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  border-left: 3px solid var(--accent-color);
-  margin: var(--spacing-lg) 0;
+}
+
+.current-work .eyebrow {
+  color: var(--accent-color);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+}
+
+.current-work p:last-child,
+.about-me .background {
+  margin-bottom: 0;
+}
+
+.research-interests {
+  margin: var(--spacing-xl) 0;
 }
 
 .research-interests h3 {
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--accent-color);
+  color: var(--text-primary);
   margin-bottom: var(--spacing-md);
 }
 
@@ -298,8 +429,8 @@ main {
 .research-interests li {
   color: var(--text-secondary);
   font-size: 0.95rem;
-  line-height: 1.8;
-  margin-bottom: var(--spacing-md);
+  line-height: 1.65;
+  margin-bottom: var(--spacing-sm);
   padding-left: var(--spacing-lg);
   position: relative;
 }

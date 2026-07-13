@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>revanth senthil</title>
+  <title>Revanth Senthilkumaran | Robot Learning Researcher</title>
+  <meta name="description" content="Revanth Senthilkumaran is a robot learning researcher at Carnegie Mellon working on embodied reasoning, cross-embodiment learning, and learning from demonstrations.">
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -40,35 +41,81 @@
 
   <main>
     <!-- Intro Section -->
-    <section class="intro">
+    <section class="intro" data-interactive-arm="right">
+      <div class="robot-arms" aria-hidden="true">
+        <svg focusable="false" preserveAspectRatio="none">
+          <g class="robot-arm" data-arm="right">
+            <line class="arm-link arm-link-upper"></line>
+            <line class="arm-link arm-link-lower"></line>
+            <circle class="arm-joint arm-shoulder" r="10"></circle>
+            <circle class="arm-joint arm-elbow" r="7"></circle>
+            <circle class="arm-joint arm-wrist" r="6"></circle>
+            <line class="arm-palm"></line>
+            <line class="arm-finger arm-finger-one"></line>
+            <line class="arm-finger arm-finger-two"></line>
+          </g>
+        </svg>
+      </div>
       <img src="images/profile_real.jpg" alt="revanth krishna senthilkumaran">
       <div class="description">
         <h1>revanth senthilkumaran</h1>
-        <p>M.S. Robotics @ Carnegie Mellon University</p>
-        <p>Robot Learning Intern @ <a href="https://www.bosch.com/research/bcai/#:~:text=TU%20Wien-,Carnegie%20Mellon%20University,-University%20of%20T%C3%BCbingen" target="_blank">Bosch Center for AI</a></p>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: var(--spacing-md);">Embodied Reasoning • Cross-embodiment learning • Memory Architectures • Learning from Demonstrations</p>
+        <p class="role">M.S. Robotics, Carnegie Mellon University<br>Robot Learning Intern, <a href="https://www.bosch.com/research/bcai/#:~:text=TU%20Wien-,Carnegie%20Mellon%20University,-University%20of%20T%C3%BCbingen" target="_blank" rel="noopener noreferrer">Bosch Center for AI</a></p>
+        <p class="research-summary">I build robot learning systems that reason about physical interaction and transfer manipulation skills across embodiments, tasks, and environments.</p>
+        <div class="social-icons">
+        <a href="https://github.com/revanthsenthil" target="_blank" aria-label="GitHub" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:revanths@andrew.cmu.edu" aria-label="Email" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/revanth-senthilkumaran" target="_blank" aria-label="LinkedIn" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://scholar.google.com/citations?user=p4oXJvQAAAAJ&hl=en" target="_blank" aria-label="Google Scholar" title="Google Scholar">
+          <i class="fas fa-graduation-cap"></i>
+        </a>
+        <a href="https://twitter.com/revvozz" target="_blank" aria-label="Twitter" title="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
       </div>
     </section>
 
-    <!-- About Me Section -->
-    <section class="about-me">
+    <!-- Research Overview Section -->
+    <section class="about-me" data-interactive-arm="left">
+      <div class="robot-arms" aria-hidden="true">
+        <svg focusable="false" preserveAspectRatio="none">
+          <g class="robot-arm" data-arm="left">
+            <line class="arm-link arm-link-upper"></line>
+            <line class="arm-link arm-link-lower"></line>
+            <circle class="arm-joint arm-shoulder" r="10"></circle>
+            <circle class="arm-joint arm-elbow" r="7"></circle>
+            <circle class="arm-joint arm-wrist" r="6"></circle>
+            <line class="arm-palm"></line>
+            <line class="arm-finger arm-finger-one"></line>
+            <line class="arm-finger arm-finger-two"></line>
+          </g>
+        </svg>
+      </div>
       <div class="about-content">
-        <h2>about me</h2>
-        <p>I'm a robotics researcher at Carnegie Mellon University pursuing my M.S. in Robotics, working with <a href="https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html" target="_blank">Prof. Ding Zhao</a> in the <a href="https://safeai-lab.github.io/" target="_blank">SAFE-AI Lab</a>. I'm also mentored by <a href="https://jonfranc.com/" target="_blank">Dr. Jonathan Francis</a> in the Bosch Center for AI. My research focuses on enabling robots to better perceive, reason about, and manipulate their environments through learning-based approaches.</p>
+        <h2>research</h2>
+        <p class="research-vision">My goal is to develop <strong>general-purpose manipulation policies</strong> that combine perception, reasoning, and action—and can reuse knowledge across different robot bodies rather than learning every skill from scratch.</p>
+
+        <div class="current-work">
+          <p class="eyebrow">currently</p>
+          <p>At CMU and the <a href="https://www.bosch.com/research/bcai/" target="_blank" rel="noopener noreferrer">Bosch Center for AI</a>, I study embodied reasoning and cross-embodiment robot learning with <a href="https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html" target="_blank" rel="noopener noreferrer">Prof. Ding Zhao</a> and <a href="https://jonfranc.com/" target="_blank" rel="noopener noreferrer">Dr. Jonathan Francis</a>. I am especially interested in how demonstrations, video, and interaction data can help robots acquire manipulation skills that generalize.</p>
+        </div>
         
         <div class="research-interests">
-          <h3>research interests</h3>
+          <h3>questions I want to explore</h3>
           <ul>
-            <li><strong>Reasoned Perception & Manipulation:</strong> Developing robots that can understand and interact with complex environments through embodied reasoning</li>
-            <li><strong>Learning from Demonstrations:</strong> Enabling robots to learn manipulation skills from human demonstrations and videos</li>
-            <li><strong>Generalizable Policies:</strong> Creating robot policies that transfer across different embodiments and environments</li>
-            <li><strong>Human-Robot Collaboration:</strong> Building robots that can effectively assist humans in everyday tasks</li>
+            <li>How can a robot reason about objects, contacts, and task constraints before it acts?</li>
+            <li>How can demonstrations and human video provide scalable supervision for manipulation?</li>
+            <li>What representations let a learned skill transfer across embodiments and environments?</li>
           </ul>
         </div>
 
-        <p><strong>Background:</strong> B.S. in Computer Engineering from Purdue University. Previously worked at AeroVironment Inc. as a Robotics Software Engineer and conducted research at Purdue's IDEAS Lab, SMART Lab, and the Air Force Research Laboratory.</p>
-
-        <p><strong>Beyond Research:</strong> I play basketball, follow a lot of sports, play piano, and enjoy exploring new food spots.</p>
+        <p class="background"><strong>Background:</strong> Before CMU, I earned a B.S. in Computer Engineering from Purdue, worked as a Robotics Software Engineer at AeroVironment, and conducted research at Purdue's SMART Lab with <a href="https://www.smart-laboratory.org/group/bcm.html" target="_blank" rel="noopener noreferrer">Prof. Byung-Cheol Min</a>, IDEAS Lab with <a href="https://www.cs.purdue.edu/people/faculty/bera89.html" target="_blank" rel="noopener noreferrer">Prof. Aniket Bera</a>, and the Air Force Research Laboratory with <a href="https://engineering.purdue.edu/AAE/people/ptProfile?resource_id=37293" target="_blank" rel="noopener noreferrer">Prof. James Goppert</a>. Outside research, I play basketball and piano and enjoy finding new food spots.</p>
       </div>
       
       <div class="social-icons">
@@ -114,7 +161,7 @@
 
     <!-- Publications Section -->
     <section class="research-section publications" id="publications">
-      <h2>research projects</h2>
+      <h2>selected research</h2>
       <div class="papers">
 
         <!-- Humanoid Touch Dream Paper -->
@@ -123,7 +170,7 @@
           <div class="text-content">
             <h3>Humanoid Touch Dream: Learning Versatile Humanoid Manipulation with Touch Dreaming</h3>
             <p><strong>Authors:</strong> Yaru Niu, Zhenlong Fang, Binghong Chen, Shuai Zhou, <u>Revanth K. Senthilkumaran</u>, Hao Zhang, Bingqing Chen, Chen Qiu, H. Eric Tseng, Jonathan Francis, Ding Zhao</p>
-            <p><strong>Status:</strong> IEEE-IROS 2026</p>
+            <p><strong>Status:</strong> IEEE-IROS 2026, RSS WCBM Workshop 2026 (<strong>ORAL</strong>), RSS SemRob Workshop 2026, RSS Tactile for FM Workshop 2026</p>
             <div class="links">
               <a href="abstracts/htd.txt" target="_blank">
                 <i class="fas fa-align-left"></i> Abstract

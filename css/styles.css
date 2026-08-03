@@ -513,30 +513,34 @@ section h2 {
 }
 
 .updates {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
+  list-style: none;
+  margin-bottom: 0;
   margin-top: var(--spacing-xl);
+  padding: 0;
 }
 
-.updates p {
-  padding: var(--spacing-lg);
-  background-color: var(--bg-secondary);
-  border-left: 3px solid var(--accent-color);
-  border-radius: var(--radius-md);
+.updates li {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--border-color);
   color: var(--text-secondary);
-  transition: all var(--transition);
 }
 
-.updates p:hover {
-  border-left-color: var(--accent-hover);
-  background-color: var(--bg-tertiary);
-  transform: translateX(4px);
+.updates li:first-child {
+  padding-top: 0;
+}
+
+.updates time {
+  color: var(--accent-color);
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .updates strong {
-  color: var(--accent-color);
-  font-weight: 700;
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .updates a {
@@ -549,6 +553,13 @@ section h2 {
 .updates a:hover {
   color: var(--accent-hover);
   text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .updates li {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+  }
 }
 
 /* ========================================

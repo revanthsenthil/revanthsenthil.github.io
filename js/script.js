@@ -76,9 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
       group,
       side: group.dataset.arm,
       upper: group.querySelector('.arm-link-upper'),
+      middle: group.querySelector('.arm-link-middle'),
       lower: group.querySelector('.arm-link-lower'),
       shoulder: group.querySelector('.arm-shoulder'),
       elbow: group.querySelector('.arm-elbow'),
+      midJoint: group.querySelector('.arm-mid-joint'),
       wrist: group.querySelector('.arm-wrist'),
       palm: group.querySelector('.arm-palm'),
       fingerOne: group.querySelector('.arm-finger-one'),
@@ -120,12 +122,13 @@ document.addEventListener('DOMContentLoaded', () => {
         y: pointerTarget.y - (pointerDy / pointerDistance) * handLength
       };
       const isCompactCard = height < 400;
-      const linkOne = Math.min(isCompactCard ? 170 : 270, width * 0.29);
-      const linkTwo = Math.min(isCompactCard ? 150 : 240, width * 0.26);
+      const linkOne = Math.min(isCompactCard ? 175 : 230, width * 0.24);
+      const linkTwo = Math.min(isCompactCard ? 150 : 200, width * 0.21);
+      const linkThree = Math.min(isCompactCard ? 120 : 170, width * 0.17);
       const dx = desired.x - base.x;
       const dy = desired.y - base.y;
       const distance = Math.hypot(dx, dy) || 1;
-      const reachableDistance = Math.min(Math.max(distance, 35), linkOne + linkTwo - 4);
+      const reachableDistance = Math.min(Math.max(distance, 35), linkOne + linkTwo + linkThree - 4);
       const wristTarget = {
         x: base.x + (dx / distance) * reachableDistance,
         y: base.y + (dy / distance) * reachableDistance
@@ -137,19 +140,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const wx = arm.wristPosition.x - base.x;
       const wy = arm.wristPosition.y - base.y;
-      const wristDistance = Math.min(Math.max(Math.hypot(wx, wy), 1), linkOne + linkTwo - 1);
+      const wristDistance = Math.min(Math.max(Math.hypot(wx, wy), 1), linkOne + linkTwo + linkThree - 1);
       const wristAngle = Math.atan2(wy, wx);
+      const wrist = {
+        x: base.x + Math.cos(wristAngle) * wristDistance,
+        y: base.y + Math.sin(wristAngle) * wristDistance
+      };
+      const midTarget = {
+        x: wrist.x - Math.cos(wristAngle) * linkThree,
+        y: wrist.y - Math.sin(wristAngle) * linkThree
+      };
+      const mx = midTarget.x - base.x;
+      const my = midTarget.y - base.y;
+      const midDistance = Math.min(Math.max(Math.hypot(mx, my), 1), linkOne + linkTwo - 1);
+      const midAngle = Math.atan2(my, mx);
       const elbowOffset = Math.acos(Math.max(-1, Math.min(1,
-        (linkOne * linkOne + wristDistance * wristDistance - linkTwo * linkTwo) / (2 * linkOne * wristDistance)
+        (linkOne * linkOne + midDistance * midDistance - linkTwo * linkTwo) / (2 * linkOne * midDistance)
       )));
       const bendDirection = isLeft ? -1 : 1;
-      const upperAngle = wristAngle + bendDirection * elbowOffset;
+      const upperAngle = midAngle + bendDirection * elbowOffset;
       const elbow = {
         x: base.x + Math.cos(upperAngle) * linkOne,
         y: base.y + Math.sin(upperAngle) * linkOne
       };
-      const wrist = arm.wristPosition;
-      const handAngle = Math.atan2(wrist.y - elbow.y, wrist.x - elbow.x);
+      const midJointAngle = Math.atan2(midTarget.y - elbow.y, midTarget.x - elbow.x);
+      const midJoint = {
+        x: elbow.x + Math.cos(midJointAngle) * linkTwo,
+        y: elbow.y + Math.sin(midJointAngle) * linkTwo
+      };
+      const handAngle = Math.atan2(wrist.y - midJoint.y, wrist.x - midJoint.x);
       const forward = { x: Math.cos(handAngle), y: Math.sin(handAngle) };
       const normal = { x: -forward.y, y: forward.x };
       const targetGrip = isReaching ? 4 : 12;
@@ -159,9 +178,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const fingerLength = 18;
 
       setLine(arm.upper, base.x, base.y, elbow.x, elbow.y);
-      setLine(arm.lower, elbow.x, elbow.y, wrist.x, wrist.y);
+      setLine(arm.middle, elbow.x, elbow.y, midJoint.x, midJoint.y);
+      setLine(arm.lower, midJoint.x, midJoint.y, wrist.x, wrist.y);
       setCircle(arm.shoulder, base.x, base.y);
       setCircle(arm.elbow, elbow.x, elbow.y);
+      setCircle(arm.midJoint, midJoint.x, midJoint.y);
       setCircle(arm.wrist, wrist.x, wrist.y);
       setLine(arm.palm,
         wrist.x - normal.x * palmHalf, wrist.y - normal.y * palmHalf,

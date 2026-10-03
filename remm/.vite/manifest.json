@@ -1,0 +1,125 @@
+{
+  "../remm-website/node_modules/.pnpm/vinext@1.0.0-beta.5_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_b79f96eac0df69dff29a3f5c3c8024f5/node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js": {
+    "file": "remm/_next/static/chunks/app-route-prefetch-policy-DvHEbUTy.js",
+    "name": "app-route-prefetch-policy",
+    "src": "../remm-website/node_modules/.pnpm/vinext@1.0.0-beta.5_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_b79f96eac0df69dff29a3f5c3c8024f5/node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "virtual:vinext-app-browser-entry"
+    ]
+  },
+  "../remm-website/node_modules/.pnpm/vinext@1.0.0-beta.5_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_b79f96eac0df69dff29a3f5c3c8024f5/node_modules/vinext/dist/shims/layout-segment-context.js": {
+    "file": "remm/_next/static/chunks/layout-segment-context-D4TZqehq.js",
+    "name": "layout-segment-context",
+    "src": "../remm-website/node_modules/.pnpm/vinext@1.0.0-beta.5_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_b79f96eac0df69dff29a3f5c3c8024f5/node_modules/vinext/dist/shims/layout-segment-context.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-Dn4fRF22.js",
+      "virtual:vinext-app-browser-entry",
+      "_framework-Dhn3Ep8z.js"
+    ]
+  },
+  "../remm-website/node_modules/.pnpm/vinext@1.0.0-beta.5_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_b79f96eac0df69dff29a3f5c3c8024f5/node_modules/vinext/dist/shims/streamed-icons.js": {
+    "file": "remm/_next/static/chunks/streamed-icons-DKu1omOa.js",
+    "name": "streamed-icons",
+    "src": "../remm-website/node_modules/.pnpm/vinext@1.0.0-beta.5_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_b79f96eac0df69dff29a3f5c3c8024f5/node_modules/vinext/dist/shims/streamed-icons.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-Dn4fRF22.js",
+      "_framework-Dhn3Ep8z.js"
+    ]
+  },
+  "_framework-Dhn3Ep8z.js": {
+    "file": "remm/_next/static/chunks/framework-Dhn3Ep8z.js",
+    "name": "framework",
+    "imports": [
+      "_rolldown-runtime-Dn4fRF22.js"
+    ]
+  },
+  "_rolldown-runtime-Dn4fRF22.js": {
+    "file": "remm/_next/static/chunks/rolldown-runtime-Dn4fRF22.js",
+    "name": "rolldown-runtime"
+  },
+  "app/appendix/memory-explorer.tsx": {
+    "file": "remm/_next/static/chunks/memory-explorer-CuNwjN2n.js",
+    "name": "memory-explorer",
+    "src": "app/appendix/memory-explorer.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-Dn4fRF22.js",
+      "_framework-Dhn3Ep8z.js"
+    ]
+  },
+  "app/notation.tsx": {
+    "file": "remm/_next/static/chunks/notation-DVFcF6GT.js",
+    "name": "notation",
+    "src": "app/notation.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-Dn4fRF22.js",
+      "_framework-Dhn3Ep8z.js"
+    ]
+  },
+  "app/physical-charts.tsx": {
+    "file": "remm/_next/static/chunks/physical-charts-BM4x5k0u.js",
+    "name": "physical-charts",
+    "src": "app/physical-charts.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-Dn4fRF22.js",
+      "_framework-Dhn3Ep8z.js"
+    ]
+  },
+  "app/robot-demos.tsx": {
+    "file": "remm/_next/static/chunks/robot-demos-BmIcpwzJ.js",
+    "name": "robot-demos",
+    "src": "app/robot-demos.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-Dn4fRF22.js",
+      "_framework-Dhn3Ep8z.js"
+    ]
+  },
+  "app/theme-toggle.tsx": {
+    "file": "remm/_next/static/chunks/theme-toggle-SPMWVfVM.js",
+    "name": "theme-toggle",
+    "src": "app/theme-toggle.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-Dn4fRF22.js",
+      "_framework-Dhn3Ep8z.js"
+    ]
+  },
+  "components/ui/table.tsx": {
+    "file": "remm/_next/static/chunks/table-BLF4U6ko.js",
+    "name": "table",
+    "src": "components/ui/table.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-Dn4fRF22.js",
+      "_framework-Dhn3Ep8z.js"
+    ]
+  },
+  "virtual:vinext-app-browser-entry": {
+    "file": "remm/_next/static/chunks/index-C2-qSXS9.js",
+    "name": "index",
+    "src": "virtual:vinext-app-browser-entry",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-Dn4fRF22.js",
+      "_framework-Dhn3Ep8z.js"
+    ],
+    "dynamicImports": [
+      "../remm-website/node_modules/.pnpm/vinext@1.0.0-beta.5_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_b79f96eac0df69dff29a3f5c3c8024f5/node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js",
+      "app/robot-demos.tsx",
+      "../remm-website/node_modules/.pnpm/vinext@1.0.0-beta.5_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_b79f96eac0df69dff29a3f5c3c8024f5/node_modules/vinext/dist/shims/layout-segment-context.js",
+      "app/theme-toggle.tsx",
+      "virtual:vinext-app-browser-entry",
+      "components/ui/table.tsx",
+      "app/physical-charts.tsx",
+      "../remm-website/node_modules/.pnpm/vinext@1.0.0-beta.5_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_b79f96eac0df69dff29a3f5c3c8024f5/node_modules/vinext/dist/shims/streamed-icons.js",
+      "app/notation.tsx",
+      "app/appendix/memory-explorer.tsx"
+    ]
+  }
+}

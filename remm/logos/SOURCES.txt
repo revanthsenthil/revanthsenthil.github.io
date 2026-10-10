@@ -1,0 +1,10 @@
+Official institution logo assets, retrieved 2026-10-09.
+
+cmu.png
+https://www.cmu.edu/themes/custom/cmu_base/images/wordmarksquare-red-600x600.png
+Usage reference: https://brand.cmu.edu/visual-identity/carnegie-mellon-trademarks/university-logo
+
+bosch.svg
+https://www.bosch-presse.de/pressportal/de/media/res/gfx/bosch-invented-for-life.svg
+
+Logos are displayed as affiliation identifiers, without recoloring or redrawing.

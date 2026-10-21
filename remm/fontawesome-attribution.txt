@@ -1,0 +1,7 @@
+LinkedIn and X brand icons: Font Awesome Free 6.7.2 by @fontawesome
+https://fontawesome.com
+Copyright 2024 Fonticons, Inc.
+Icons licensed under CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+https://fontawesome.com/license/free
+Source: https://github.com/FortAwesome/Font-Awesome/tree/6.x/svgs/brands
+SVG path geometry is unchanged; presentation and accessibility attributes adapted for this website.
